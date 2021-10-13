@@ -1,18 +1,8 @@
+#ifndef CANONICALIZATION_H
+#define CANONICALIZATION_H
 
+#include "iomanip";
 
-class canonicalization
-{
-private:
-    /* data */
-public:
-    canonicalization(/* args */);
-    ~canonicalization();
-};
+std::string toCannon(std::string path);
 
-canonicalization::canonicalization(/* args */)
-{
-}
-
-canonicalization::~canonicalization()
-{
-}
+#endif //CANONICALIZATION_H
