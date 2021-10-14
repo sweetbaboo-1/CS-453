@@ -1,3 +1,6 @@
+#include <iomanip>
+#include <iostream>
+#include "test_cases.h"
 #include "canonicalization.h"
 
 //Non Homographs
