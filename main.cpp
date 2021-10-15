@@ -1,7 +1,6 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
-#include "canonicalization.cpp" //TODO cpp?
 #include "homograph.cpp"
 #include "test_cases.cpp"
 
@@ -15,7 +14,7 @@ int main()
     bool keepRunning = true;
 
     // begin menu
-    std::cout << "Welcome to the Homograph Lab!";
+    std::cout << "\nWelcome to the Homograph Lab!";
 
     // while the user hasn't quit
     while (keepRunning)
@@ -24,22 +23,21 @@ int main()
         std::cin >> userInput;
         std::cout << "\n";
 
-        if (userInput == "1")
+        if (userInput == "1") // test cases
         {
             testCases();
         }
-        else if (userInput == "2")
+        else if (userInput == "2") // custom paths
         {
             std::cout << "Please enter the first path: ";
             std::cin >> path1;
             std::cout << "Please enter the second path: ";
             std::cin >> path2;
-            // TODO this line prevents building, undefined reference error.
-            areHomographs(path1, path2) ? std::cout << "Paths, " << path1 << " and " << path2 << " are the same.\n" : std::cout << "Paths, " << path1 << " and " << path2 << " are not the same.\n";
+            std::cout << "\nPaths, " << path1 << " and " << path2 << " are" << (areHomographs(path1, path2) ? " " : " not ") << "the same\n";
         }
-        else if (userInput == "3")
+        else if (userInput == "3") // exit
         {
-            std::cout << "Thank you, goodbye";
+            std::cout << "Thank you, goodbye\n";
             keepRunning = false;
         }
         else

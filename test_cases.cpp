@@ -1,12 +1,11 @@
-#include <iomanip>
+#pragma once
 #include <iostream>
-#include <string>
-#include "canonicalization.cpp"
 
-//Non Homographs
+// Non Homographs
 
-//Homographs
+// Homographs
 
+// runs through all defined test cases to ensure the program is functioning correctly
 void testCases() {
     std::cout << "Running test cases...\n";
 }
