@@ -4,7 +4,6 @@
 #include "homograph.h"
 #include "test_cases.cpp"
 
-
 // 3 menu options, run test cases, enter two file paths, quit
 
 int main()
