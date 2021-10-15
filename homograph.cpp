@@ -1,4 +1,5 @@
 #include <iomanip>
+#include <string>
 #include "homograph.h"
 #include "canonicalization.h"
 

@@ -1,7 +1,7 @@
 #include <iomanip>
 #include <iostream>
-#include "test_cases.h"
-#include "canonicalization.h"
+#include <string>
+#include "canonicalization.cpp"
 
 //Non Homographs
 

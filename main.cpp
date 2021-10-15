@@ -1,8 +1,9 @@
 #include <iomanip>
 #include <iostream>
-#include "canonicalization.h" //TODO cpp?
-#include "homograph.h"
-#include "test_cases.h"
+#include <string>
+#include "canonicalization.cpp" //TODO cpp?
+#include "homograph.cpp"
+#include "test_cases.cpp"
 
 // 3 menu options, run test cases, enter two file paths, quit
 
@@ -24,7 +25,9 @@ int main()
         std::cout << "\n";
 
         if (userInput == "1")
+        {
             testCases();
+        }
         else if (userInput == "2")
         {
             std::cout << "Please enter the first path: ";
@@ -32,7 +35,6 @@ int main()
             std::cout << "Please enter the second path: ";
             std::cin >> path2;
             // TODO this line prevents building, undefined reference error.
-            std::cout << "\n";
             areHomographs(path1, path2) ? std::cout << "Paths, " << path1 << " and " << path2 << " are the same.\n" : std::cout << "Paths, " << path1 << " and " << path2 << " are not the same.\n";
         }
         else if (userInput == "3")

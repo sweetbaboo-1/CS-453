@@ -1,5 +1,5 @@
 #include <iomanip>
-#include "canonicalization.h"
+#include <string>
 
 std::string toCannon(std::string path) {
     std::string cannonizedString = "";
