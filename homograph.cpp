@@ -1,7 +1,6 @@
 #include <iomanip>
 #include <string>
-#include "homograph.h"
-#include "canonicalization.h"
+#include "canonicalization.cpp"
 
 bool areHomographs(std::string path1, std::string path2) {
     std::string path1Canon = toCannon(path1);
