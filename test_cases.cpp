@@ -10,6 +10,9 @@ inline void nonHomographTests()
     std::string testPathTwo = ".jacob\\secret\\password.txt";
     std::string testPathThree = "..\\password.txt";
     std::string testPathFour = "..\\secret\\password.txt";
+    std::string testPathFive = "..\\..\\jacob\\secret\\password.txt";
+    std::string testPathSix = "..\\..\\..\\secret\\password.txt";
+    std::string testPathSeven = "..\\jacob\\secret\\password.txt";
     std::string userInput = "";
     bool keepRunning = true;
 
@@ -18,7 +21,10 @@ inline void nonHomographTests()
     std::cout << "2. " << testPathTwo << std::endl;
     std::cout << "3. " << testPathThree << std::endl;
     std::cout << "4. " << testPathFour << std::endl;
-    std::cout << "5. Exit\n"
+    std::cout << "5. " << testPathFive << std::endl;
+    std::cout << "6. " << testPathSix << std::endl;
+    std::cout << "7. " << testPathSeven << std::endl;
+    std::cout << "8. Exit\n"
               << std::endl;
     std::cout << "Please select a test case to run: ";
 
@@ -43,6 +49,18 @@ inline void nonHomographTests()
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathFour) ? " " : " not ") << "homographs\n";
         }
         else if (userInput == "5")
+        {
+            std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathFive) ? " " : " not ") << "homographs\n";
+        }
+        else if (userInput == "6")
+        {
+            std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathSix) ? " " : " not ") << "homographs\n";
+        }
+        else if (userInput == "7")
+        {
+            std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathSeven) ? " " : " not ") << "homographs\n";
+        }
+        else if (userInput == "8")
         {
             keepRunning = false;
         }
@@ -53,11 +71,13 @@ inline void nonHomographTests()
 inline void homographTests()
 {
     std::string forbiddenPath = ".\\jacob\\secret\\password.txt";
-    std::string testPathOne = ".\\jacob\\secret\\password.txt";
+    std::string testPathOne = ".\\jacob/secret/password.txt";
     std::string testPathTwo = ".\\Jacob\\secret\\password.txt";
     std::string testPathThree = ".\\JACOB\\secret\\password.txt";
     std::string testPathFour = ".\\jacob\\secret\\password.txt";
     std::string testPathFive = ".\\jacob/secret\\password.txt";
+    std::string testPathSix = ".\\jacob\\secret\\password";
+    std::string testPathSeven = ".\\JACOB/SECRET/PASSWORD.TXT";
     std::string userInput = "";
     bool keepRunning = true;
 
@@ -66,7 +86,10 @@ inline void homographTests()
     std::cout << "2. " << testPathTwo << std::endl;
     std::cout << "3. " << testPathThree << std::endl;
     std::cout << "4. " << testPathFour << std::endl;
-    std::cout << "5. Exit\n"
+    std::cout << "5. " << testPathFive << std::endl;
+    std::cout << "6. " << testPathSix << std::endl;
+    std::cout << "7. " << testPathSeven << std::endl;
+    std::cout << "8. Exit\n"
               << std::endl;
     std::cout << "Please select a test case to run: ";
 
@@ -91,6 +114,18 @@ inline void homographTests()
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathFour) ? " " : " not ") << "homographs\n";
         }
         else if (userInput == "5")
+        {
+            std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathFive) ? " " : " not ") << "homographs\n";
+        }
+        else if (userInput == "6")
+        {
+            std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathSix) ? " " : " not ") << "homographs\n";
+        }
+        else if (userInput == "7")
+        {
+            std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathSeven) ? " " : " not ") << "homographs\n";
+        }
+        else if (userInput == "8")
         {
             keepRunning = false;
         }
