@@ -76,7 +76,7 @@ inline void homographTests()
     std::string testPathThree = ".\\JACOB\\secret\\password.txt";
     std::string testPathFour = ".\\jacob\\secret\\password.txt";
     std::string testPathFive = ".\\jacob/secret\\password.txt";
-    std::string testPathSix = ".\\jacob\\secret\\password";
+    std::string testPathSix = ".\\jacob\\secret\\password.txt";
     std::string testPathSeven = ".\\JACOB/SECRET/PASSWORD.TXT";
     std::string userInput = "";
     bool keepRunning = true;
