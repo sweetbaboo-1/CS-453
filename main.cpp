@@ -30,9 +30,9 @@ int main()
         else if (userInput == "2") // custom paths
         {
             std::cout << "Please enter the first path: ";
-            std::cin >> path1;
+            std::getline(std::cin, path1);
             std::cout << "Please enter the second path: ";
-            std::cin >> path2;
+            std::getline(std::cin, path2);
             std::cout << "\nPaths, " << path1 << " and " << path2 << " are" << (areHomographs(path1, path2) ? " " : " not ") << "the same\n";
         }
         else if (userInput == "3") // exit
