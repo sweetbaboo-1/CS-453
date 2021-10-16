@@ -80,7 +80,7 @@ void testCases()
             keepRunning = false;
         }
     }
-
+}
 // string PATH = "/home/user/cse453/secret/password.txt";
 
 // // Non Homographs
