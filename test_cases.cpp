@@ -141,7 +141,7 @@ inline void testCases()
 
     while (keepRunning) // user hasn't quit
     {
-        std::cout << "\nPlease select an option below:\n";
+        std::cout << "Please select an option below:\n";
         std::cout << "1. Non Homograph Test case\n";
         std::cout << "2. Homograph Test case\n";
         std::cout << "3. Exit\n";
