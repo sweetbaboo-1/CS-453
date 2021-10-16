@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include "homograph.cpp"
-//#include "test_cases.cpp"
+#include "test_cases.cpp"
 
 // 3 menu options, run test cases, enter two file paths, quit
 
@@ -25,7 +25,7 @@ int main()
 
         if (userInput == "1") // test cases
         {
-           // testCases();
+            testCases();
         }
         else if (userInput == "2") // custom paths
         {
