@@ -4,7 +4,7 @@
 #include <string>
 #include <filesystem>
 #include <stdio.h>
-#include <dirent.h>
+//#include <dirent.h>
 
 // returns a string with all alphabetical charecters in their lowercase form
 inline std::string toLowerCase(std::string str)
@@ -17,16 +17,16 @@ inline std::string toLowerCase(std::string str)
 }
 
 // returns a canonized version of a given string
-std::string toCannon(std::string path) {
+inline std::string toCannon(std::string path) {
     std::string lowerPath = toLowerCase(path); 
     if(lowerPath[0] == '.' && lowerPath[1] == '/')
     {
-        std::string dir = _getcwd(0, 0);
-        dir = toLowerCase(dir);
+        //std::string dir = _getcwd(0, 0);
+        //dir = toLowerCase(dir);
         lowerPath.erase(0);
-        dir.append(lowerPath);
+        //dir.append(lowerPath);
         lowerPath = "";
-        lowerPath = dir;
+        //lowerPath = dir;
         std::cout << lowerPath;
     } 
     
