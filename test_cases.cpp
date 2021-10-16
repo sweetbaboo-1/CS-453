@@ -3,7 +3,7 @@
 #include "homograph.cpp"
 
 // Non Homographs
-void nonHomographTests()
+inline void nonHomographTests()
 {
     std::string forbiddenPath = ".\\jacob\\secret\\password.txt";
     std::string testPathOne = "\\jacob\\secret\\password.txt";
@@ -50,7 +50,7 @@ void nonHomographTests()
 }
 
 // Homographs
-void homographTests()
+inline void homographTests()
 {
     std::string forbiddenPath = ".\\jacob\\secret\\password.txt";
     std::string testPathOne = "..\\jacob\\secret\\password.txt";
@@ -103,7 +103,7 @@ void homographTests()
 }
 
 // runs through all defined test cases to ensure the program is functioning correctly
-void testCases()
+inline void testCases()
 {
     bool keepRunning = true;
     std::string userInput = "";
