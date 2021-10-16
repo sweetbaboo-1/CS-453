@@ -4,7 +4,6 @@
 #include <string>
 #include <filesystem>
 #include <stdio.h>
-//#include <dirent.h>
 
 // returns a string with all alphabetical charecters in their lowercase form
 inline std::string toLowerCase(std::string str)
@@ -18,56 +17,52 @@ inline std::string toLowerCase(std::string str)
 
 // returns a canonized version of a given string
 inline std::string toCannon(std::string path) {
-    std::string lowerPath = toLowerCase(path); 
-    if(lowerPath[0] == '.' && lowerPath[1] == '/')
+    
+    std::string canonizedPath = toLowerCase(path); 
+    if(canonizedPath[0] == '.' && canonizedPath[1] == '/')
     {
-        //std::string dir = _getcwd(0, 0);
-        //dir = toLowerCase(dir);
-        lowerPath.erase(0);
-        //dir.append(lowerPath);
-        lowerPath = "";
-        //lowerPath = dir;
-        std::cout << lowerPath;
+        canonizedPath.erase(0);
+        canonizedPath = "";
+        std::cout << canonizedPath;
     } 
     
-    for(std::string::size_type i = 0; i < lowerPath.size(); ++i)
+    for(std::string::size_type i = 0; i < canonizedPath.size(); ++i)
     {
-        // /a/b/c/d.out
-        // ./a/b/c/d.out
-        // C:\Computer Security\HomographLab-main\HomographLab-main/a/b/c/d.out
-        
-        if(lowerPath[i] == '%' || lowerPath[i] == '$' 
-        || lowerPath[i] == '#' || lowerPath[i] == '&' 
-        || lowerPath[i] == '*' || lowerPath[i] == ' ' 
-        || lowerPath[i] == '[' || lowerPath[i] == ']'
-        || lowerPath[i] == '|' || lowerPath[i] == '\\'
-        || lowerPath[i] == '+' || lowerPath[i] == '='
-        || lowerPath[i] == '-' || lowerPath[i] == '_'
-        || lowerPath[i] == '{' || lowerPath[i] == '}'
-        || lowerPath[i] == ',' || lowerPath[i] == '<'
-        || lowerPath[i] == '>' || lowerPath[i] == '\''
-        || lowerPath[i] == '"' || lowerPath[i] == '`'
-        || lowerPath[i] == '~' || lowerPath[i] == '(' 
-        || lowerPath[i] == ')' || lowerPath[i] == '^'
-        || lowerPath[i] == ':' || lowerPath[i] == ';'
-        || lowerPath[i] == '/')
+
+        // remove all symbols
+        if(canonizedPath[i] == '%' || canonizedPath[i] == '$' 
+        || canonizedPath[i] == '#' || canonizedPath[i] == '&' 
+        || canonizedPath[i] == '*' || canonizedPath[i] == ' ' 
+        || canonizedPath[i] == '[' || canonizedPath[i] == ']'
+        || canonizedPath[i] == '|' || canonizedPath[i] == '\\'
+        || canonizedPath[i] == '+' || canonizedPath[i] == '='
+        || canonizedPath[i] == '-' || canonizedPath[i] == '_'
+        || canonizedPath[i] == '{' || canonizedPath[i] == '}'
+        || canonizedPath[i] == ',' || canonizedPath[i] == '<'
+        || canonizedPath[i] == '>' || canonizedPath[i] == '\''
+        || canonizedPath[i] == '"' || canonizedPath[i] == '`'
+        || canonizedPath[i] == '~' || canonizedPath[i] == '(' 
+        || canonizedPath[i] == ')' || canonizedPath[i] == '^'
+        || canonizedPath[i] == ':' || canonizedPath[i] == ';'
+        || canonizedPath[i] == '/')
         {
-            lowerPath.erase(i);
+            canonizedPath.erase(i);
         }
 
-        if(lowerPath[i] == '0') lowerPath[i] = 'o';
-        else if (lowerPath[i] == '3') lowerPath[i] = 'e';
-        else if (lowerPath[i] == '5') lowerPath[i] = 's';
-        else if (lowerPath[i] == '!') lowerPath[i] = 'i';
-        else if (lowerPath[i] == '@') lowerPath[i] = 'a';
-        else if (lowerPath[i] == '1') lowerPath[i] = 'l';
-        else if (lowerPath[i] == '8') lowerPath[i] = 'b';
-        else if (lowerPath[i] == '9') lowerPath[i] = 'p';
-        else if (lowerPath[i] == '4') lowerPath[i] = 'a';
-        else if (lowerPath[i] == '6') lowerPath[i] = 'b';
-        else if (lowerPath[i] == '2') lowerPath[i] = 'z';
-        else if (lowerPath[i] == '7') lowerPath[i] = 't';
+        // replace certain symbols with their canonized version
+        if(canonizedPath[i] == '0') canonizedPath[i] = 'o';
+        else if (canonizedPath[i] == '3') canonizedPath[i] = 'e';
+        else if (canonizedPath[i] == '5') canonizedPath[i] = 's';
+        else if (canonizedPath[i] == '!') canonizedPath[i] = 'i';
+        else if (canonizedPath[i] == '@') canonizedPath[i] = 'a';
+        else if (canonizedPath[i] == '1') canonizedPath[i] = 'l';
+        else if (canonizedPath[i] == '8') canonizedPath[i] = 'b';
+        else if (canonizedPath[i] == '9') canonizedPath[i] = 'p';
+        else if (canonizedPath[i] == '4') canonizedPath[i] = 'a';
+        else if (canonizedPath[i] == '6') canonizedPath[i] = 'b';
+        else if (canonizedPath[i] == '2') canonizedPath[i] = 'z';
+        else if (canonizedPath[i] == '7') canonizedPath[i] = 't';
     }
     
-    return lowerPath;
+    return canonizedPath;
 }

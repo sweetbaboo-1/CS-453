@@ -34,7 +34,7 @@ int main()
             std::getline(std::cin, path1);
             std::cout << "Please enter the second path: ";
             std::getline(std::cin, path2);
-            std::cout << "\nPaths, " << path1 << " and " << path2 << " are" << (areHomographs(path1, path2) ? " " : " not ") << "the same\n";
+            std::cout << "\nPaths, " << path1 << " and " << path2 << " are" << (areHomographs(path1, path2) ? " " : " not ") << "homographs\n";
         }
         else if (userInput == "3") // exit
         {
