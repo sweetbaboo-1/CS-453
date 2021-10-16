@@ -5,6 +5,9 @@
 // Non Homographs
 inline void nonHomographTests()
 {
+
+    bool keepRunning = true;
+
     std::string forbiddenPath = ".\\jacob\\secret\\password.txt";
     std::string testPathOne = "\\jacob\\secret\\password.txt";
     std::string testPathTwo = ".jacob\\secret\\password.txt";
@@ -14,7 +17,6 @@ inline void nonHomographTests()
     std::string testPathSix = "..\\..\\..\\secret\\password.txt";
     std::string testPathSeven = "..\\jacob\\secret\\password.txt";
     std::string userInput = "";
-    bool keepRunning = true;
 
     std::cout << "\nNon Homograph Test Cases for C:\\Users\\jacob\\secret\\password.txt with the current directory being C:\\Users\\jacob\\:\n";
     std::cout << "1. " << testPathOne << std::endl;
@@ -24,9 +26,8 @@ inline void nonHomographTests()
     std::cout << "5. " << testPathFive << std::endl;
     std::cout << "6. " << testPathSix << std::endl;
     std::cout << "7. " << testPathSeven << std::endl;
-    std::cout << "8. Exit\n"
-              << std::endl;
-    std::cout << "Please select a test case to run: ";
+    std::cout << "8. Exit\n";
+    std::cout << "\nPlease select a test case to run: ";
 
     while (keepRunning) // user hasn't quit
     {
@@ -70,6 +71,8 @@ inline void nonHomographTests()
 // Homographs
 inline void homographTests()
 {
+    bool keepRunning = true;
+
     std::string forbiddenPath = ".\\jacob\\secret\\password.txt";
     std::string testPathOne = ".\\jacob/secret/password.txt";
     std::string testPathTwo = ".\\Jacob\\secret\\password.txt";
@@ -79,8 +82,7 @@ inline void homographTests()
     std::string testPathSix = ".\\jacob\\secret\\password";
     std::string testPathSeven = ".\\JACOB/SECRET/PASSWORD.TXT";
     std::string userInput = "";
-    bool keepRunning = true;
-
+   
     std::cout << "\nHomograph Test Cases for C:\\Users\\jacob\\secret\\password.txt with the current directory being C:\\Users\\jacob\\:\n";
     std::cout << "1. " << testPathOne << std::endl;
     std::cout << "2. " << testPathTwo << std::endl;
@@ -89,9 +91,8 @@ inline void homographTests()
     std::cout << "5. " << testPathFive << std::endl;
     std::cout << "6. " << testPathSix << std::endl;
     std::cout << "7. " << testPathSeven << std::endl;
-    std::cout << "8. Exit\n"
-              << std::endl;
-    std::cout << "Please select a test case to run: ";
+    std::cout << "8. Exit\n";
+    std::cout << "\nPlease select a test case to run: ";
 
     while (keepRunning) // user hasn't quit
     {
