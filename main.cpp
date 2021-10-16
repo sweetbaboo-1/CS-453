@@ -29,6 +29,7 @@ int main()
         }
         else if (userInput == "2") // custom paths
         {
+            std::cin.ignore();
             std::cout << "Please enter the first path: ";
             std::getline(std::cin, path1);
             std::cout << "Please enter the second path: ";
