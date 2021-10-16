@@ -1,5 +1,6 @@
 #pragma once
 #include <iomanip>
+#include <iostream>
 #include <string>
 #include <filesystem>
 
@@ -14,23 +15,41 @@ std::string toLowerCase(std::string str)
 }
 
 // returns a canonized version of a given string
-std::string toCannon(std::string path)
-{
-    std::string cannonizedString = toLowerCase(path);
+std::string toCannon(std::string path) {
+    std::string lowerPath = toLowerCase(path);  
+    
+    for(std::string::size_type i = 0; i < lowerPath.size(); ++i)
+    {
+        if(lowerPath[i] == '.')
+        {
+            auto old = filesystem::current_path();
+            std::cout << old;
 
+        }
+        if(lowerPath[i] == '%' || lowerPath[i] == '$' 
+        || lowerPath[i] == '#' || lowerPath[i] == '&' 
+        || lowerPath[i] == '*' || lowerPath[i] == ' ' 
+        || lowerPath[i] == '[' || lowerPath[i] == ']'
+        || lowerPath[i] == '|' || lowerPath[i] == '\\'
+        || lowerPath[i] == '+' || lowerPath[i] == '='
+        || lowerPath[i] == '-' || lowerPath[i] == '_'
+        || lowerPath[i] == '{' || lowerPath[i] == '}'
+        || lowerPath[i] == ',' || lowerPath[i] == '<'
+        || lowerPath[i] == '>' || lowerPath[i] == '\''
+        || lowerPath[i] == '"' || lowerPath[i] == '`'
+        || lowerPath[i] == '~' || lowerPath[i] == '(' || lowerPath[i] == ')')
+        {
+            lowerPath.erase(i);
+        }
 
-    /*****************************************************
-     * 
-     * Process: 
-     * remove all capital letters
-     * exchange symbols for letters? not sure if 0 = o or if we need to be smarter than that
-     * current directory tricks? 
-     *    if current directory is documents then
-     *    C:/Users/Matthew/documents/passwords.txt = /passwords.txt = /documents/passwords.txt
-     * turn all this information into a base "canon" string
-     *  full path from drive in lowercase letters
-     * 
-     ****************************************************/
+        if(lowerPath[i] == '0') lowerPath[i] = 'o';
+        else if (lowerPath[i] == '3') lowerPath[i] = 'e';
+        else if (lowerPath[i] == '5') lowerPath[i] = 's';
+        else if (lowerPath[i] == '!') lowerPath[i] = 'i';
+        else if (lowerPath[i] == '@') lowerPath[i] = 'a';
+        else if (lowerPath[i] == '^') lowerPath[i] = 'v';
+        else if (lowerPath[i] == '1') lowerPath[i] = 'l';
+    }
 
-    return cannonizedString;
+    return lowerPath;
 }
