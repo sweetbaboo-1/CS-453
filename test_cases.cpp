@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-
+#include "homograph.cpp"
 // Non Homographs
 
 // Homographs
