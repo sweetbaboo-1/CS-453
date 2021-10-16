@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include <filesystem>
+#include <stdio.h>
+#include <dirent.h>
 
 // returns a string with all alphabetical charecters in their lowercase form
 inline std::string toLowerCase(std::string str)
@@ -15,19 +17,25 @@ inline std::string toLowerCase(std::string str)
 }
 
 // returns a canonized version of a given string
-inline std::string toCannon(std::string path) {
-    std::string lowerPath = toLowerCase(path);  
+std::string toCannon(std::string path) {
+    std::string lowerPath = toLowerCase(path); 
+    if(lowerPath[0] == '.' && lowerPath[1] == '/')
+    {
+        std::string dir = _getcwd(0, 0);
+        dir = toLowerCase(dir);
+        lowerPath.erase(0);
+        dir.append(lowerPath);
+        lowerPath = "";
+        lowerPath = dir;
+        std::cout << lowerPath;
+    } 
     
     for(std::string::size_type i = 0; i < lowerPath.size(); ++i)
     {
+        // /a/b/c/d.out
         // ./a/b/c/d.out
-        // C://Computer Security/a/b/c/d.out
-        // if(lowerPath[i] == '.')
-        // {
-        //     auto old = filesystem::current_path();
-        //     std::cout << old;
-
-        // }
+        // C:\Computer Security\HomographLab-main\HomographLab-main/a/b/c/d.out
+        
         if(lowerPath[i] == '%' || lowerPath[i] == '$' 
         || lowerPath[i] == '#' || lowerPath[i] == '&' 
         || lowerPath[i] == '*' || lowerPath[i] == ' ' 
