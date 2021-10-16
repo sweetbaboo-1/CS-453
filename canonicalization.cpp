@@ -20,12 +20,14 @@ std::string toCannon(std::string path) {
     
     for(std::string::size_type i = 0; i < lowerPath.size(); ++i)
     {
-        if(lowerPath[i] == '.')
-        {
-            auto old = filesystem::current_path();
-            std::cout << old;
+        // ./a/b/c/d.out
+        // C://Computer Security/a/b/c/d.out
+        // if(lowerPath[i] == '.')
+        // {
+        //     auto old = filesystem::current_path();
+        //     std::cout << old;
 
-        }
+        // }
         if(lowerPath[i] == '%' || lowerPath[i] == '$' 
         || lowerPath[i] == '#' || lowerPath[i] == '&' 
         || lowerPath[i] == '*' || lowerPath[i] == ' ' 
@@ -37,7 +39,10 @@ std::string toCannon(std::string path) {
         || lowerPath[i] == ',' || lowerPath[i] == '<'
         || lowerPath[i] == '>' || lowerPath[i] == '\''
         || lowerPath[i] == '"' || lowerPath[i] == '`'
-        || lowerPath[i] == '~' || lowerPath[i] == '(' || lowerPath[i] == ')')
+        || lowerPath[i] == '~' || lowerPath[i] == '(' 
+        || lowerPath[i] == ')' || lowerPath[i] == '^'
+        || lowerPath[i] == ':' || lowerPath[i] == ';'
+        || lowerPath[i] == '/')
         {
             lowerPath.erase(i);
         }
@@ -47,9 +52,14 @@ std::string toCannon(std::string path) {
         else if (lowerPath[i] == '5') lowerPath[i] = 's';
         else if (lowerPath[i] == '!') lowerPath[i] = 'i';
         else if (lowerPath[i] == '@') lowerPath[i] = 'a';
-        else if (lowerPath[i] == '^') lowerPath[i] = 'v';
         else if (lowerPath[i] == '1') lowerPath[i] = 'l';
+        else if (lowerPath[i] == '8') lowerPath[i] = 'b';
+        else if (lowerPath[i] == '9') lowerPath[i] = 'p';
+        else if (lowerPath[i] == '4') lowerPath[i] = 'a';
+        else if (lowerPath[i] == '6') lowerPath[i] = 'b';
+        else if (lowerPath[i] == '2') lowerPath[i] = 'z';
+        else if (lowerPath[i] == '7') lowerPath[i] = 't';
     }
-
+    
     return lowerPath;
 }
