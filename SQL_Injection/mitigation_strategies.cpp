@@ -9,22 +9,45 @@
  *************************************/
 std::string weakMitigation(const std::string input) // may need more than one input
 {
-    std::string output;
-    const char *p = input.c_str();
+    std::string sanitizedInput;
     // filter input to remove union statements
-    // remove single quotes or the 'OR' keyword
+    // remove single quotes or the 'OR' keyword - tautology
     // remove comments
     // remove semicolons
 
+    // UNION attack
+    // example test case:
     // SELECT authenticate FROM passwordList WHERE name='Matthew' and passwd='password' UNION SELECT authenticate FROM passwordList';
-
     std::string search = "UNION";
-    if (strstr(input.c_str(), search.c_str())) // we have a union attack
+    std::size_t index = input.find(search);
+    if (index != std::string::npos) // union statement at found
+        return sanitizedInput = input.substr(0, index) + ";";
+    
+    // tautology attack
+    // example test case:
+    //"SELECT authenticate FROM passwordList WHERE name='Matthew' and passwd='password' OR 'x' = 'x';"
+    search = "OR";
+    index = input.find(search);
+    if (index != std::string::npos)
+        return sanitizedInput = input.substr(0,index) + ";";
+
+    // comment attack
+    // example test case:
+    //"SELECT authenticate FROM passwordList WHERE name='Root'; -- and passwd='nothign';
+    search = "--";
+    index = input.find(search);
+    // check if there is a ';' before the comment
+    if(input.find(";") < index) // there is a semicolon before a comment in a query that shouldn't have comments
     {
-        
+        // TODO: THIS NEEDS TO REMOVE THE EXTRA ' THAT IS IN THE QUERY
+        std::string s = ";";
+        std::size_t i = input.find(s); // the first ';' should be removed and the comment deleted
+        std::string str = input.substr(0, i); // the first half of the statement
+        str += input.substr(index + 2); // the comment is the other half of the statement
+        return str;
     }
 
-    return input;
+    return sanitizedInput = input;
 }
 
 /**************************************
@@ -36,4 +59,20 @@ std::string strongMitigation(std::string input) // may need more than one input
 {
     // remove sql from workflow (works for all cases)
     return input;
+}
+
+void runWeakMitigation(std::string inputs[6], std::string sanitizedInputs[6])
+{
+    for (int i = 0; i < 6; i++)
+    {
+        sanitizedInputs[i] = weakMitigation(inputs[i]);
+    }
+}
+
+void runStrongMitigation(std::string inputs[6], std::string sanitizedInputs[6])
+{
+    for (int i = 0; i < 6; i++)
+    {
+        sanitizedInputs[i] = strongMitigation(inputs[i]);
+    }
 }

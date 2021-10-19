@@ -65,7 +65,7 @@ void tautologyAttackTestCases(TestCase testCases[6])
     // Matthew Peart
     TestCase mp;
     mp.username = "Matthew";
-    mp.password = "password\' OR \'1\' = \'1";
+    mp.password = "password\' OR \'x\' = \'x";
     testCases[0] = mp;
 
     // Christian Longhurst
