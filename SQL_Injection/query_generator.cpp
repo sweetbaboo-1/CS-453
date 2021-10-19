@@ -3,14 +3,21 @@
 #include <iomanip>
 
 /******************************************************
- * TODO: figure out how this should work and code it
- * THIS IS NOT DONE
+ * returns an SQL string representing a query
+ *****************************************************/
+std::string query(std::string username, std::string password)
+{
+    return "SELECT authenticate FROM passwordList WHERE name=\'" + username + "\' and passwd=\'" + password + "\';";
+}
+
+/******************************************************
+ * cycles through all given test cases and populates
+ * queries
  *****************************************************/
 void generateQuerys(TestCase (&testCases)[6], std::string (&queries)[6]) 
 {
     for (int i = 0; i < 6; i++)
     {
-        // returning something to verify that it works as intended
-        queries[i] = testCases[i].username + " " + testCases[i].password;
+        queries[i] = query(testCases[i].username, testCases[i].password);
     }
 }

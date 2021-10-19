@@ -64,8 +64,8 @@ void tautologyAttackTestCases(TestCase testCases[6])
 {
     // Matthew Peart
     TestCase mp;
-    mp.username = "";
-    mp.password = "";
+    mp.username = "Matthew";
+    mp.password = "password\' OR \'1\' = \'1";
     testCases[0] = mp;
 
     // Christian Longhurst
@@ -107,8 +107,8 @@ void unionQueryAttackTestCases(TestCase testCases[6])
 {
     // Matthew Peart
     TestCase mp;
-    mp.username = "";
-    mp.password = "";
+    mp.username = "Matthew";
+    mp.password = "password\' UNION SELECT authenticate FROM passwordList";
     testCases[0] = mp;
 
     // Christian Longhurst
@@ -150,8 +150,8 @@ void additionalStatementAttackTestCases(TestCase testCases[6])
 {
     // Matthew Peart
     TestCase mp;
-    mp.username = "";
-    mp.password = "";
+    mp.username = "Matthew";
+    mp.password = "password\'; INSERT INTO passwordList (name, passwd) VALUES \'matt\', \'correcthorsebatterystaple";
     testCases[0] = mp;
 
     // Christian Longhurst
@@ -193,8 +193,8 @@ void commentAttackTestCases(TestCase testCases[6])
 {
     // Matthew Peart
     TestCase mp;
-    mp.username = "";
-    mp.password = "";
+    mp.username = "Root\'; -- ";
+    mp.password = "password";
     testCases[0] = mp;
 
     // Christian Longhurst
