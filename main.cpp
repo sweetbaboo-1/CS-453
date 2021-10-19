@@ -1,40 +1,24 @@
-#include <iomanip>
-#include <iostream>
-#include <string>
-#include "homograph.cpp"
-#include "test_cases.cpp"
-
-// 3 menu options, run test cases, enter two file paths, quit
+#include "Homograph/homograph_main.cpp"
+#include "SQL_Injection/sql_main.cpp"
 
 int main()
 {
-    std::string userInput = "";
-    std::string path1 = "";
-    std::string path2 = "";
     bool keepRunning = true;
-
-    // begin menu
-    std::cout << "\nWelcome to the Homograph Lab!";
-
-    // while the user hasn't quit
+    std::string userInput = "";
+    
     while (keepRunning)
     {
-        std::cout << "\n1. Run test cases\n2. Enter custom paths\n3. Exit\n";
+        std::cout << "\n1. Homograph Lab\n2. SQL Injection lab\n3. Exit\n";
         std::cin >> userInput;
         std::cout << "\n";
 
-        if (userInput == "1") // test cases
+        if (userInput == "1") // Homograph Lab
         {
-            testCases();
+            homograph();
         }
-        else if (userInput == "2") // custom paths
+        else if (userInput == "2") // SQL Injection Lab
         {
-            std::cin.ignore();
-            std::cout << "Please enter the first path: ";
-            std::getline(std::cin, path1);
-            std::cout << "Please enter the second path: ";
-            std::getline(std::cin, path2);
-            std::cout << "\nPaths, " << path1 << " and " << path2 << " are" << (areHomographs(path1, path2) ? " " : " not ") << "homographs\n";
+            sql();
         }
         else if (userInput == "3") // exit
         {
@@ -44,6 +28,5 @@ int main()
         else
             std::cout << "Please enter a valid option\n";
     }
-
     return 0;
 }
