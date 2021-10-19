@@ -2,36 +2,39 @@
 #include "query_generator.cpp"
 #include "mitigation_strategies.cpp"
 
+#include <iostream>
+
 void sql()
 {
     bool keepRunning = true;
+    std::string userInput = "";
     TestCase testCases[6];
     std::string queries[6];
     while (keepRunning)
     {
-        std::cout << "\n1. Valid test cases\n2. Tautology attacks\n3. Union query attacks\n4. Additional statement attacks\n5. Comment attacks\n";
+        std::cout << "\n1. Valid test cases\n2. Tautology attacks\n3. Union query attacks\n4. Additional statement attacks\n5. Comment attacks\n6. Exit\n";
         std::cin >> userInput;
         std::cout << "\n";
 
         if (userInput == "1") // valid test cases
         {
-            generateQuerys(validTestCases(testCases, queries));
+            validTestCases(testCases);
         }
         else if (userInput == "2") // tautology
         {
-            generateQuerys(tautologyAttackTestCases(testCases, queries));
+            tautologyAttackTestCases(testCases);
         }
         else if (userInput == "3") // union query
         {
-            generateQuerys(unionQueryAttackTestCases(testCases, queries));
+            unionQueryAttackTestCases(testCases);
         }
         else if (userInput == "4") // additonal statment
         {
-            generateQuerys(additionalStatementAttackTestCases(testCases, queries));
+            additionalStatementAttackTestCases(testCases);
         }
         else if (userInput == "5") // comment
         {
-            generateQuerys(commentAttackTestCases(testCases, queries));
+            commentAttackTestCases(testCases);
         }
         else if (userInput == "6") // exit
         {
@@ -40,5 +43,11 @@ void sql()
         }
         else
             std::cout << "Please enter a valid option\n";
+        
+        generateQuerys(testCases, queries);
+        for(int i = 0; i < 6; i++)
+        {
+            std::cout << queries[i] << std::endl;
+        }
     }
 }

@@ -12,7 +12,7 @@ struct TestCase
 
 /*************************************
  * These test cases should be VALID
- * MUST contain:
+ * passwords MUST contain:
  * letters
  * numbers
  * underscores
@@ -21,8 +21,8 @@ void validTestCases(TestCase testCases[6])
 {
     // Matthew Peart
     TestCase mp;
-    mp.username = "";
-    mp.password = "";
+    mp.username = "Matthew";
+    mp.password = "P@ss_word1";
     testCases[0] = mp;
 
     // Christian Longhurst
