@@ -8,7 +8,7 @@ int main()
     
     while (keepRunning)
     {
-        std::cout << "\n1. Homograph Lab\n2. SQL Injection lab\n3. Exit\n";
+        std::cout << "\n1. Homograph Lab\n2. SQL Injection lab\nQ. Exit\n";
         std::cin >> userInput;
         std::cout << "\n";
 
@@ -20,7 +20,7 @@ int main()
         {
             sql();
         }
-        else if (userInput == "3") // exit
+        else if (userInput == "q" || userInput == "Q") // exit
         {
             std::cout << "Thank you, goodbye\n";
             keepRunning = false;
