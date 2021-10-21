@@ -1,6 +1,6 @@
 #include "Homograph/homograph_main.cpp"
 #include "SQL_Injection/sql_main.cpp"
-
+#include "Memory_Organization/memory_organization_main.cpp"
 int main()
 {
     bool keepRunning = true;
@@ -19,6 +19,10 @@ int main()
         else if (userInput == "2") // SQL Injection Lab
         {
             sql();
+        }
+        else if (userInput == "3")
+        {
+            memory_organization_main();
         }
         else if (userInput == "q" || userInput == "Q") // exit
         {

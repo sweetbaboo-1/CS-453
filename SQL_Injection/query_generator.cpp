@@ -1,5 +1,4 @@
 #pragma once
-
 #include <iomanip>
 
 /******************************************************
@@ -14,7 +13,7 @@ std::string query(std::string username, std::string password)
  * cycles through all given test cases and populates
  * queries
  *****************************************************/
-void generateQuerys(TestCase (&testCases)[6], std::string (&queries)[6]) 
+void generateQuerys(TestCase testCases[6], std::string queries[6]) 
 {
     for (int i = 0; i < 6; i++)
     {
