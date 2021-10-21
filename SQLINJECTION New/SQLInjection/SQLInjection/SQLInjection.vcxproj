@@ -19,7 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\CODE\main_SQLInjection.cpp" />
+    <ClCompile Include="..\..\..\SQL_Injection\mitigation_strategies.cpp" />
+    <ClCompile Include="..\..\..\SQL_Injection\query_generator.cpp" />
+    <ClCompile Include="..\..\..\SQL_Injection\sql_main.cpp" />
+    <ClCompile Include="..\..\..\SQL_Injection\test_cases.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

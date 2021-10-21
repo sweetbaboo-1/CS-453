@@ -15,7 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\CODE\main_SQLInjection.cpp">
+    <ClCompile Include="..\..\..\SQL_Injection\mitigation_strategies.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SQL_Injection\query_generator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SQL_Injection\sql_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SQL_Injection\test_cases.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

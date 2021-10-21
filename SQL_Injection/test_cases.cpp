@@ -17,7 +17,7 @@ struct TestCase
  * numbers
  * underscores
  *************************************/
-void validTestCases(TestCase testCases[6])
+inline void validTestCases(TestCase testCases[6])
 {
     // Matthew Peart
     TestCase mp;
@@ -60,7 +60,7 @@ void validTestCases(TestCase testCases[6])
  * These test cases MUST demonstrate a 
  * tautology attack
  *************************************/
-void tautologyAttackTestCases(TestCase testCases[6])
+inline void tautologyAttackTestCases(TestCase testCases[6])
 {
     // Matthew Peart
     TestCase mp;
@@ -103,7 +103,7 @@ void tautologyAttackTestCases(TestCase testCases[6])
  * These test cases MUST demonstrate a
  * union querry attack
  *************************************/
-void unionQueryAttackTestCases(TestCase testCases[6])
+inline void unionQueryAttackTestCases(TestCase testCases[6])
 {
     // Matthew Peart
     TestCase mp;
@@ -146,7 +146,7 @@ void unionQueryAttackTestCases(TestCase testCases[6])
  * These test cases MUST demonstrate a 
  * additonal statement attack
  *************************************/
-void additionalStatementAttackTestCases(TestCase testCases[6])
+inline void additionalStatementAttackTestCases(TestCase testCases[6])
 {
     // Matthew Peart
     TestCase mp;
@@ -189,7 +189,7 @@ void additionalStatementAttackTestCases(TestCase testCases[6])
  * These test cases MUST demonstrate a 
  * comment attack
  *************************************/
-void commentAttackTestCases(TestCase testCases[6])
+inline void commentAttackTestCases(TestCase testCases[6])
 {
     // Matthew Peart
     TestCase mp;

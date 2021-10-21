@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-void displaySanitizedInputs(std::string inputs[6])
+inline void displaySanitizedInputs(std::string inputs[6])
 {
     for (int i = 0; i < 6; i++)
     {
@@ -12,7 +12,7 @@ void displaySanitizedInputs(std::string inputs[6])
     }
 }
 
-void sql()
+inline void sql()
 {
     bool keepRunning = true;
     std::string userInput = "";

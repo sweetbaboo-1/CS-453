@@ -7,7 +7,7 @@
  * takes an input (querry)
  * returns a weekly sanitized input
  *************************************/
-std::string weakMitigation(const std::string input) // may need more than one input
+inline std::string weakMitigation(const std::string input) // may need more than one input
 {
     std::string sanitizedInput = input;
     // filter input to remove union statements
@@ -72,13 +72,13 @@ std::string weakMitigation(const std::string input) // may need more than one in
  * takes an input (querry)
  * returns a totally sanitized input
  *************************************/
-std::string strongMitigation(std::string input) // may need more than one input
+inline std::string strongMitigation(std::string input) // may need more than one input
 {
     // remove sql from workflow (works for all cases)
     return input;
 }
 
-void runWeakMitigation(std::string inputs[6], std::string sanitizedInputs[6])
+inline void runWeakMitigation(std::string inputs[6], std::string sanitizedInputs[6])
 {
     for (int i = 0; i < 6; i++)
     {
@@ -86,7 +86,7 @@ void runWeakMitigation(std::string inputs[6], std::string sanitizedInputs[6])
     }
 }
 
-void runStrongMitigation(std::string inputs[6], std::string sanitizedInputs[6])
+inline void runStrongMitigation(std::string inputs[6], std::string sanitizedInputs[6])
 {
     for (int i = 0; i < 6; i++)
     {
