@@ -12,7 +12,7 @@ inline void displaySanitizedInputs(std::string inputs[6])
     }
 }
 
-inline void sql()
+void sql()
 {
     bool keepRunning = true;
     std::string userInput = "";
