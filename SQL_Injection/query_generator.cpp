@@ -13,9 +13,9 @@ inline std::string query(std::string username, std::string password)
 
 /******************************************************
  * cycles through all given test cases and populates
- * queries
+ * queries with generated queries
  *****************************************************/
-inline void generateQuerys(TestCase (&testCases)[6], std::string (&queries)[6]) 
+inline void generateQuerys(TestCase testCases[6], std::string queries[6]) 
 {
     for (int i = 0; i < 6; i++)
     {

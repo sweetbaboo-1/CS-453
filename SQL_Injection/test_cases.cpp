@@ -33,26 +33,26 @@ inline void validTestCases(TestCase testCases[6])
 
     // Chris Van Kammen
     TestCase cvk;
-    cl.username = "";
-    cl.password = "";
+    cvk.username = "";
+    cvk.password = "";
     testCases[2] = cvk;
 
     // Dylan Havens
     TestCase dh;
-    cl.username = "";
-    cl.password = "";
+    dh.username = "";
+    dh.password = "";
     testCases[3] = dh;
 
     // Sam Haymond
     TestCase sh;
-    cl.username = "dreyvonn";
-    cl.password = "CableBoy45";
+    sh.username = "dreyvonn";
+    sh.password = "CableBoy45";
     testCases[4] = sh;
 
     // Tyler Craig
     TestCase tc;
-    cl.username = "Tyler";
-    cl.password = "blahblah";
+    tc.username = "Tyler";
+    tc.password = "blahblah";
     testCases[5] = tc;
 }
 
@@ -76,26 +76,26 @@ inline void tautologyAttackTestCases(TestCase testCases[6])
 
     // Chris Van Kammen
     TestCase cvk;
-    cl.username = "";
-    cl.password = "";
+    cvk.username = "";
+    cvk.password = "";
     testCases[2] = cvk;
 
     // Dylan Havens
     TestCase dh;
-    cl.username = "";
-    cl.password = "";
+    dh.username = "";
+    dh.password = "";
     testCases[3] = dh;
 
     // Sam Haymond
     TestCase sh;
-    cl.username = "dreyvonn";
-    cl.password = "Tautology\' OR 1 = 1";
+    sh.username = "dreyvonn";
+    sh.password = "Tautology\' OR 1 = 1";
     testCases[4] = sh;
 
     // Tyler Craig
     TestCase tc;
-    cl.username = "";
-    cl.password = "";
+    tc.username = "";
+    tc.password = "";
     testCases[5] = tc;
 }
 
@@ -119,26 +119,26 @@ inline void unionQueryAttackTestCases(TestCase testCases[6])
 
     // Chris Van Kammen
     TestCase cvk;
-    cl.username = "";
-    cl.password = "";
+    cvk.username = "";
+    cvk.password = "";
     testCases[2] = cvk;
 
     // Dylan Havens
     TestCase dh;
-    cl.username = "";
-    cl.password = "";
+    dh.username = "";
+    dh.password = "";
     testCases[3] = dh;
 
     // Sam Haymond
     TestCase sh;
-    cl.username = "dreyvonn";
-    cl.password = "password\' UNION    SELECT authenicate FROM passwordList";
+    sh.username = "dreyvonn";
+    sh.password = "password\' UNION    SELECT authenicate FROM passwordList";
     testCases[4] = sh;
 
     // Tyler Craig
     TestCase tc;
-    cl.username = "";
-    cl.password = "";
+    tc.username = "";
+    tc.password = "";
     testCases[5] = tc;
 }
 
@@ -162,26 +162,26 @@ inline void additionalStatementAttackTestCases(TestCase testCases[6])
 
     // Chris Van Kammen
     TestCase cvk;
-    cl.username = "";
-    cl.password = "";
+    cvk.username = "";
+    cvk.password = "";
     testCases[2] = cvk;
 
     // Dylan Havens
     TestCase dh;
-    cl.username = "";
-    cl.password = "";
+    dh.username = "";
+    dh.password = "";
     testCases[3] = dh;
 
     // Sam Haymond
     TestCase sh;
-    cl.username = "dreyvonn";
-    cl.password = "password\' DROP TABLE passwordList";
+    sh.username = "dreyvonn";
+    sh.password = "password\' DROP TABLE passwordList";
     testCases[4] = sh;
 
     // Tyler Craig
     TestCase tc;
-    cl.username = "";
-    cl.password = "";
+    tc.username = "";
+    tc.password = "";
     testCases[5] = tc;
 }
 
@@ -205,25 +205,25 @@ inline void commentAttackTestCases(TestCase testCases[6])
 
     // Chris Van Kammen
     TestCase cvk;
-    cl.username = "";
-    cl.password = "";
+    cvk.username = "";
+    cvk.password = "";
     testCases[2] = cvk;
 
     // Dylan Havens
     TestCase dh;
-    cl.username = "";
-    cl.password = "";
+    dh.username = "";
+    dh.password = "";
     testCases[3] = dh;
 
     // Sam Haymond
     TestCase sh;
-    cl.username = "Root\'     --     ";
-    cl.password = "nothing";
+    sh.username = "Root\'     --     ";
+    sh.password = "nothing";
     testCases[4] = sh;
 
     // Tyler Craig
     TestCase tc;
-    cl.username = "";
-    cl.password = "";
+    tc.username = "";
+    tc.password = "";
     testCases[5] = tc;
 }
