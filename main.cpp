@@ -10,7 +10,7 @@ int main()
     {
         std::cout << "\n1. Homograph Lab\n2. SQL Injection lab\nQ. Exit\n";
         std::cin >> userInput;
-        std::cout << "\n";
+        //std::cout << "\n";
 
         if (userInput == "1") // Homograph Lab
         {

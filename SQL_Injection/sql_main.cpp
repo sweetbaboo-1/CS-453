@@ -41,7 +41,7 @@ void sql()
     TestCase sanitizedInputs[6];
     while (keepRunning)
     {
-        std::cout << "\n1. Valid test cases\n2. Tautology attacks\n3. Union query attacks\n4. Additional statement attacks\n5. Comment attacks\n6. Exit\n";
+        std::cout << "\n1. Valid Test Cases\n2. Tautology Attacks\n3. Union Query Attacks\n4. Additional Statement Attacks\n5. Comment Attacks\n6. Exit\n";
         std::cin >> userInput;
         std::cout << "\n";
 

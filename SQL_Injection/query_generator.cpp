@@ -6,13 +6,12 @@
  *****************************************************/
 std::string query(std::string username, std::string password)
 {
-    //NOT A VALID SQL STATEMENT
     return "SELECT authenticate FROM passwordList WHERE name=\'" + username + "\' and passwd=\'" + password + "\';";
 }
 
 /******************************************************
  * cycles through all given test cases and populates
- * queries
+ * queries with generated queries
  *****************************************************/
 void generateQuerys(TestCase testCases[6], std::string queries[6]) 
 {
