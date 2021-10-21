@@ -32,6 +32,7 @@ void displayQueries(std::string queries[6])
     displayQueries(queries);
 }
 
+//int main()
 void sql()
 {
     bool keepRunning = true;
@@ -130,4 +131,5 @@ void sql()
         else
             std::cout << "Please enter a valid option\n";
     }
+    //return 0;
 }
