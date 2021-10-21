@@ -51,8 +51,8 @@ inline void validTestCases(TestCase testCases[6])
 
     // Tyler Craig
     TestCase tc;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "Tyler";
+    cl.password = "blahblah";
     testCases[5] = tc;
 }
 
@@ -108,7 +108,7 @@ inline void unionQueryAttackTestCases(TestCase testCases[6])
     // Matthew Peart
     TestCase mp;
     mp.username = "Matthew";
-    mp.password = "password\' UNION SELECT authenticate FROM passwordList";
+    mp.password = "password\' uNiOn SELECT authenticate FROM passwordList";
     testCases[0] = mp;
 
     // Christian Longhurst
@@ -151,7 +151,7 @@ inline void additionalStatementAttackTestCases(TestCase testCases[6])
     // Matthew Peart
     TestCase mp;
     mp.username = "Matthew";
-    mp.password = "password\'; INSERT INTO passwordList (name, passwd) VALUES \'matt\', \'correcthorsebatterystaple";
+    mp.password = "password\'; iNsErT INTO passwordList (name, passwd) VALUES \'matt\', \'correcthorsebatterystaple";
     testCases[0] = mp;
 
     // Christian Longhurst
