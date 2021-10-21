@@ -45,8 +45,8 @@ inline void validTestCases(TestCase testCases[6])
 
     // Sam Haymond
     TestCase sh;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "dreyvonn";
+    cl.password = "CableBoy45";
     testCases[4] = sh;
 
     // Tyler Craig
@@ -88,8 +88,8 @@ inline void tautologyAttackTestCases(TestCase testCases[6])
 
     // Sam Haymond
     TestCase sh;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "dreyvonn";
+    cl.password = "Tautology\' OR 1 = 1";
     testCases[4] = sh;
 
     // Tyler Craig
@@ -131,8 +131,8 @@ inline void unionQueryAttackTestCases(TestCase testCases[6])
 
     // Sam Haymond
     TestCase sh;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "dreyvonn";
+    cl.password = "password\' UNION    SELECT authenicate FROM passwordList";
     testCases[4] = sh;
 
     // Tyler Craig
@@ -174,8 +174,8 @@ inline void additionalStatementAttackTestCases(TestCase testCases[6])
 
     // Sam Haymond
     TestCase sh;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "dreyvonn";
+    cl.password = "password\' DROP TABLE passwordList";
     testCases[4] = sh;
 
     // Tyler Craig
@@ -217,8 +217,8 @@ inline void commentAttackTestCases(TestCase testCases[6])
 
     // Sam Haymond
     TestCase sh;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "Root\'     --     ";
+    cl.password = "nothing";
     testCases[4] = sh;
 
     // Tyler Craig
