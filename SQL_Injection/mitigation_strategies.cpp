@@ -1,6 +1,6 @@
 #pragma once
 
-#include "test_cases.cpp"
+
 #include <iostream>
 #include <algorithm>
 
@@ -9,7 +9,7 @@
  * not sure if we need this it's
  * currently unused
  *************************************/
-size_t findCaseInsensitive(std::string data, std::string toSearch, size_t pos = 0)
+inline size_t findCaseInsensitive(std::string data, std::string toSearch, size_t pos = 0)
 {
     // Convert complete given String to lower case
     std::transform(data.begin(), data.end(), data.begin(), ::tolower);
@@ -24,7 +24,7 @@ size_t findCaseInsensitive(std::string data, std::string toSearch, size_t pos = 
  * takes an input (querry)
  * returns a weekly sanitized input
  *************************************/
-std::string weakMitigation(std::string input)
+inline std::string weakMitigation(std::string input)
 {
     std::string sanitizedInput = input;
     int i = sanitizedInput.find('\'');
@@ -38,7 +38,7 @@ std::string weakMitigation(std::string input)
  * returns a totally sanitized input
  * Not 100% sure this is the right approach
  *************************************/
-std::string strongMitigation(const std::string input)
+inline std::string strongMitigation(const std::string input)
 {
     std::string sanitizedInput = input;
     int i = sanitizedInput.find('\'');
@@ -51,7 +51,7 @@ std::string strongMitigation(const std::string input)
  * break the current process
  * takes an input name or password
  *************************************/
-std::string mitigationIdeas(const std::string input)
+inline std::string mitigationIdeas(const std::string input)
 {
     std::string sanitizedInput = input;
 

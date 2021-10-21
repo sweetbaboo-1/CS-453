@@ -12,7 +12,7 @@ void displayQueries(std::string queries[6])
     }
 }
 
-void sanitizeTestCases(TestCase cases[6], bool weak)
+ void sanitizeTestCases(TestCase cases[6], bool weak)
 {
     std::string queries[6];
     for (int i = 0; i < 6; i++)

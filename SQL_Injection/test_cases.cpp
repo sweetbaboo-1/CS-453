@@ -4,7 +4,7 @@
 
 // All test cases should be in this file
 
-struct TestCase
+ struct TestCase
 {
     std::string username;
     std::string password;
@@ -17,7 +17,7 @@ struct TestCase
  * numbers
  * underscores
  *************************************/
-inline void validTestCases(TestCase testCases[6])
+ inline void validTestCases(TestCase testCases[6])
 {
     // Matthew Peart
     TestCase mp;
