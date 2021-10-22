@@ -137,7 +137,7 @@ void runTestCases(TestCase cases[], bool mitigate, bool weak, int count)
     std::string *queries = new std::string[count];
     if (mitigate)
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < count; i++)
         {
             if (weak)
             {
