@@ -34,6 +34,7 @@ void sanitizeTestCases(TestCase cases[], bool weak, int count)
     displayQueries(queries, count);
 }
 
+//int main()
 void sql()
 {
     bool keepRunning = true;
@@ -132,4 +133,5 @@ void sql()
         else
             std::cout << "Please enter a valid option\n";
     }
+    //return 0;
 }

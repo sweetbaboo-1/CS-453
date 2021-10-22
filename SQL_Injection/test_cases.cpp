@@ -4,7 +4,7 @@
 
 // All test cases should be in this file
 
-struct TestCase
+ struct TestCase
 {
     std::string username;
     std::string password;
@@ -39,8 +39,8 @@ inline void validTestCases(TestCase testCases[])
 
     // Dylan Havens
     TestCase dh;
-    dh.username = "";
-    dh.password = "";
+    dh.username = "Dylan";
+    dh.password = "H3ll0_W0r1d";
     testCases[3] = dh;
 
     // Sam Haymond
@@ -82,8 +82,8 @@ inline void tautologyAttackTestCases(TestCase testCases[])
 
     // Dylan Havens
     TestCase dh;
-    dh.username = "";
-    dh.password = "";
+    dh.username = "Dylan";
+    dh.password = "andThisAsWell\' OR username = TargetedUser";
     testCases[3] = dh;
 
     // Sam Haymond
@@ -125,8 +125,8 @@ inline void unionQueryAttackTestCases(TestCase testCases[])
 
     // Dylan Havens
     TestCase dh;
-    dh.username = "";
-    dh.password = "";
+    dh.username = "Dylan Havens";
+    dh.password = "dylanPassword\' UNION SELECT * FROM passwordList";
     testCases[3] = dh;
 
     // Sam Haymond
@@ -151,7 +151,7 @@ inline void additionalStatementAttackTestCases(TestCase testCases[])
     // Matthew Peart
     TestCase mp;
     mp.username = "Matthew";
-    mp.password = "password\'; iNsErT INTO passwordList (name, passwd) VALUES \'matt\', \'correcthorsebatterystaple";
+    mp.password = "password\'; iNsErT INTO passwordList (name, passwd) VALUES \'matt\', \'correcthorsebatterystaple\'";
     testCases[0] = mp;
 
     // Christian Longhurst
@@ -168,8 +168,8 @@ inline void additionalStatementAttackTestCases(TestCase testCases[])
 
     // Dylan Havens
     TestCase dh;
-    dh.username = "";
-    dh.password = "";
+    dh.username = "Dylan";
+    dh.password = "dylanPassword\'; UPDATE passwordList SET name = Dylan, passwd = dylanPassword";
     testCases[3] = dh;
 
     // Sam Haymond
@@ -211,8 +211,8 @@ inline void commentAttackTestCases(TestCase testCases[])
 
     // Dylan Havens
     TestCase dh;
-    dh.username = "";
-    dh.password = "";
+    dh.username = "Dylan";
+    dh.password = "myPass; # ";
     testCases[3] = dh;
 
     // Sam Haymond
