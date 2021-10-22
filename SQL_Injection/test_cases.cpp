@@ -212,7 +212,7 @@ void commentAttackTestCases(TestCase testCases[])
     // Dylan Havens
     TestCase dh;
     dh.username = "Dylan";
-    dh.password = "myPass; # ";
+    dh.password = "myPass; /*";
     testCases[3] = dh;
 
     // Sam Haymond
