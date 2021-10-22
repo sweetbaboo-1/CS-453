@@ -17,7 +17,7 @@ struct TestCase
  * numbers
  * underscores
  *************************************/
-inline void validTestCases(TestCase testCases[6])
+inline void validTestCases(TestCase testCases[])
 {
     // Matthew Peart
     TestCase mp;
@@ -60,7 +60,7 @@ inline void validTestCases(TestCase testCases[6])
  * These test cases MUST demonstrate a 
  * tautology attack
  *************************************/
-inline void tautologyAttackTestCases(TestCase testCases[6])
+inline void tautologyAttackTestCases(TestCase testCases[])
 {
     // Matthew Peart
     TestCase mp;
@@ -103,12 +103,12 @@ inline void tautologyAttackTestCases(TestCase testCases[6])
  * These test cases MUST demonstrate a
  * union querry attack
  *************************************/
-inline void unionQueryAttackTestCases(TestCase testCases[6])
+inline void unionQueryAttackTestCases(TestCase testCases[])
 {
     // Matthew Peart
     TestCase mp;
     mp.username = "Matthew";
-    mp.password = "password\' uNiOn SELECT authenticate FROM passwordList";
+    mp.password = "password\' UNION SELECT authenticate FROM passwordList";
     testCases[0] = mp;
 
     // Christian Longhurst
@@ -146,7 +146,7 @@ inline void unionQueryAttackTestCases(TestCase testCases[6])
  * These test cases MUST demonstrate a 
  * additonal statement attack
  *************************************/
-inline void additionalStatementAttackTestCases(TestCase testCases[6])
+inline void additionalStatementAttackTestCases(TestCase testCases[])
 {
     // Matthew Peart
     TestCase mp;
@@ -189,7 +189,7 @@ inline void additionalStatementAttackTestCases(TestCase testCases[6])
  * These test cases MUST demonstrate a 
  * comment attack
  *************************************/
-inline void commentAttackTestCases(TestCase testCases[6])
+inline void commentAttackTestCases(TestCase testCases[])
 {
     // Matthew Peart
     TestCase mp;
