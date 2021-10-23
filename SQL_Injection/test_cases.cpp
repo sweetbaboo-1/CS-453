@@ -70,8 +70,8 @@ void tautologyAttackTestCases(TestCase testCases[])
 
     // Christian Longhurst
     TestCase cl;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "Christian";
+    cl.password = "Cpassword OR password <> null";
     testCases[1] = cl;
 
     // Chris Van Kammen
@@ -113,8 +113,8 @@ void unionQueryAttackTestCases(TestCase testCases[])
 
     // Christian Longhurst
     TestCase cl;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "Christian";
+    cl.password = "Cpassword' UNION SELECT * FROM CumstomerInfo";
     testCases[1] = cl;
 
     // Chris Van Kammen
@@ -156,8 +156,8 @@ void additionalStatementAttackTestCases(TestCase testCases[])
 
     // Christian Longhurst
     TestCase cl;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "Christian";
+    cl.password = "password'; Select * FROM passwordlist INTO Newpasswordtable";
     testCases[1] = cl;
 
     // Chris Van Kammen
@@ -175,7 +175,7 @@ void additionalStatementAttackTestCases(TestCase testCases[])
     // Sam Haymond
     TestCase sh;
     sh.username = "dreyvonn";
-    sh.password = "password\' DROP TABLE passwordList";
+    sh.password = "password\'; DROP TABLE passwordList";
     testCases[4] = sh;
 
     // Tyler Craig
@@ -199,8 +199,8 @@ void commentAttackTestCases(TestCase testCases[])
 
     // Christian Longhurst
     TestCase cl;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "Christian /*";
+    cl.password = "PassGone*/";
     testCases[1] = cl;
 
     // Chris Van Kammen
@@ -211,8 +211,8 @@ void commentAttackTestCases(TestCase testCases[])
 
     // Dylan Havens
     TestCase dh;
-    dh.username = "Dylan";
-    dh.password = "myPass; /*";
+    dh.username = "Dylan /*";
+    dh.password = "myPass";
     testCases[3] = dh;
 
     // Sam Haymond
