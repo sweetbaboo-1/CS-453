@@ -27,8 +27,8 @@ void validTestCases(TestCase testCases[])
 
     // Christian Longhurst
     TestCase cl;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "Christian";
+    cl.password = "p@55w0rd";
     testCases[1] = cl;
 
     // Chris Van Kammen
