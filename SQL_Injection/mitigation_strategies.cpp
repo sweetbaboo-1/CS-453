@@ -64,15 +64,17 @@ std::string weakMitigation(std::string input)
         sanitizedInput = str;
     }
 
-    search = "/*";
+    //missing comment block
+    // fix the white space issue
+    search = "/*"; // check if valid sql comment
     index = findCaseInsensitive(sanitizedInput, search);
     // check if there is a ';' before the comment
     if (index != std::string::npos && sanitizedInput.find(";") < index) // there is a semicolon before a comment in a query that shouldn't have comments
     {
         std::string s = ";";
-        std::size_t i = sanitizedInput.find(s);                           // the first ';' should be removed and the comment deleted
-        std::string str = sanitizedInput.substr(0, i - 1);                // the first half of the statement minus the ;
-        str += sanitizedInput.substr(index + 3, sanitizedInput.length()); // the comment is the other half of the statement
+        std::size_t i = sanitizedInput.find(s);                       // the first ';' should be removed and the comment deleted
+        std::string str = sanitizedInput.substr(0, i);                // the first half of the statement minus the ;
+        str += sanitizedInput.substr(index, sanitizedInput.length()); // the comment is the other half of the statement
         sanitizedInput = str;
     }
 

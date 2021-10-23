@@ -10,5 +10,5 @@
 void generateQueries(TestCase testCases[], std::string queries[], int count) 
 {
     for (int i = 0; i < count; i++)
-        queries[i] = "SELECT authenticate FROM passwordList WHERE name=\'" + testCases[i].username + "\' and passwd=\'" + testCases[i].password + "\';";
+        queries[i] = "SELECT authenticate FROM passwordList WHERE name='" + testCases[i].username + "' and passwd='" + testCases[i].password + "';";
 }
