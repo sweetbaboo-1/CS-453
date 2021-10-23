@@ -64,20 +64,6 @@ std::string weakMitigation(std::string input)
         sanitizedInput = str;
     }
 
-    //missing comment block
-    // fix the white space issue
-    search = "/*"; // check if valid sql comment
-    index = findCaseInsensitive(sanitizedInput, search);
-    // check if there is a ';' before the comment
-    if (index != std::string::npos && sanitizedInput.find(";") < index) // there is a semicolon before a comment in a query that shouldn't have comments
-    {
-        std::string s = ";";
-        std::size_t i = sanitizedInput.find(s);                       // the first ';' should be removed and the comment deleted
-        std::string str = sanitizedInput.substr(0, i);                // the first half of the statement minus the ;
-        str += sanitizedInput.substr(index, sanitizedInput.length()); // the comment is the other half of the statement
-        sanitizedInput = str;
-    }
-
     /******************************
      * additonal statement attack
      * example test case:
@@ -100,8 +86,28 @@ std::string weakMitigation(std::string input)
  *************************************/
 std::string strongMitigation(const std::string input)
 {
+    //Block Comment Defence
     std::string sanitizedInput = input;
-    int i = sanitizedInput.find('\'');
-    sanitizedInput = sanitizedInput.substr(0, i);
+    
+    //Block Comment Defense
+    if(sanitizedInput.find("/*") != std::string::npos)
+        sanitizedInput = sanitizedInput.erase(sanitizedInput.find("/*"), sanitizedInput.find("/*")+1);
+    if(sanitizedInput.find("*/") != std::string::npos)
+        sanitizedInput = sanitizedInput.erase(sanitizedInput.find("*/"), sanitizedInput.find("*/")+1);
+    if(sanitizedInput.find("--") != std::string::npos)
+        sanitizedInput = sanitizedInput.erase(sanitizedInput.find("--"), sanitizedInput.find("--")+1);
+        
+    //UNION Defence
+    int filteredUnion = findCaseInsensitive(sanitizedInput, " UNION ");
+    if(filteredUnion != std::string::npos) sanitizedInput = sanitizedInput.erase(filteredUnion, sanitizedInput.length()-1);
+
+    //Additional Statement Defence
+    int semi = sanitizedInput.find(";");
+    if(semi != std::string::npos) sanitizedInput = sanitizedInput.erase(semi, sanitizedInput.length());
+    
+    //Tautology Defence
+    int filteredTautology = findCaseInsensitive(sanitizedInput, " OR ");
+    if(filteredTautology != std::string::npos) sanitizedInput = sanitizedInput.erase(filteredTautology, sanitizedInput.length()-1);
+
     return sanitizedInput;
 }

@@ -13,7 +13,8 @@ const char * failMessage = ":(";
 /**********************************************
  * MAIN : The top of the callstack.
  **********************************************/
-void memory_organization_main()
+//void memory_organization_main()
+int main()
 {
    char text[8] = "*MAIN**";
    long number = 123456;
@@ -38,6 +39,8 @@ void memory_organization_main()
    cout << "\tmessage:          " << message           << endl;
    cout << "\tfunction pointer: ";
    pointerFunction();
+
+   return 0;
 }
 
 /************************************************

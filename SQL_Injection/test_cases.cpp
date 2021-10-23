@@ -70,14 +70,14 @@ void tautologyAttackTestCases(TestCase testCases[])
 
     // Christian Longhurst
     TestCase cl;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "Christian";
+    cl.password = "Cpassword OR password <> null";
     testCases[1] = cl;
 
     // Chris Van Kammen
     TestCase cvk;
-    cvk.username = "";
-    cvk.password = "";
+    cvk.username = "homeStarLegend%$#";
+    cvk.password = "takingout OR date";
     testCases[2] = cvk;
 
     // Dylan Havens
@@ -113,14 +113,14 @@ void unionQueryAttackTestCases(TestCase testCases[])
 
     // Christian Longhurst
     TestCase cl;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "Christian";
+    cl.password = "Cpassword' UNION SELECT * FROM CumstomerInfo";
     testCases[1] = cl;
 
     // Chris Van Kammen
     TestCase cvk;
-    cvk.username = "";
-    cvk.password = "";
+    cvk.username = "wizardgandolf";
+    cvk.password = "you are being hacked UNION SELECT";
     testCases[2] = cvk;
 
     // Dylan Havens
@@ -156,14 +156,14 @@ void additionalStatementAttackTestCases(TestCase testCases[])
 
     // Christian Longhurst
     TestCase cl;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "Christian";
+    cl.password = "password'; Select * FROM passwordlist INTO Newpasswordtable";
     testCases[1] = cl;
 
     // Chris Van Kammen
     TestCase cvk;
-    cvk.username = "";
-    cvk.password = "";
+    cvk.username = "poleroidMan";
+    cvk.password = "; SELECT * FROM passwordList LEFT JOIN myOwnTable on passwordList.passwords=myOwnTable.passwords;";
     testCases[2] = cvk;
 
     // Dylan Havens
@@ -175,7 +175,7 @@ void additionalStatementAttackTestCases(TestCase testCases[])
     // Sam Haymond
     TestCase sh;
     sh.username = "dreyvonn";
-    sh.password = "password\' DROP TABLE passwordList";
+    sh.password = "password\'; DROP TABLE passwordList";
     testCases[4] = sh;
 
     // Tyler Craig
@@ -199,20 +199,20 @@ void commentAttackTestCases(TestCase testCases[])
 
     // Christian Longhurst
     TestCase cl;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "Christian /*";
+    cl.password = "PassGone*/";
     testCases[1] = cl;
 
     // Chris Van Kammen
     TestCase cvk;
-    cvk.username = "";
-    cvk.password = "";
+    cvk.username = "poleroidMan; --";
+    cvk.password = "password";
     testCases[2] = cvk;
 
     // Dylan Havens
     TestCase dh;
-    dh.username = "Dylan";
-    dh.password = "myPass; /*";
+    dh.username = "Dylan /*";
+    dh.password = "myPass";
     testCases[3] = dh;
 
     // Sam Haymond
