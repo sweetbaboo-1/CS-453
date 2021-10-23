@@ -27,8 +27,8 @@ void runTestCases(TestCase cases[], bool mitigate, bool weak, int count);
  * menu for the user to select options and the logic
  * to execute the selected option.
  *****************************************************/
-//void main()
-void sql
+//int main()
+int sql()
 {
     bool keepRunning = true;
     std::string userInput = "";
@@ -131,6 +131,7 @@ void sql
         else
             std::cout << "Please enter a valid option\n";
     }
+    return 0;
 }
 
 void runTestCases(TestCase cases[], bool mitigate, bool weak, int count)
