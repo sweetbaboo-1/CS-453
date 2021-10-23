@@ -76,8 +76,8 @@ void tautologyAttackTestCases(TestCase testCases[])
 
     // Chris Van Kammen
     TestCase cvk;
-    cvk.username = "";
-    cvk.password = "";
+    cvk.username = "homeStarLegend%$#";
+    cvk.password = "takingout OR date";
     testCases[2] = cvk;
 
     // Dylan Havens
@@ -119,8 +119,8 @@ void unionQueryAttackTestCases(TestCase testCases[])
 
     // Chris Van Kammen
     TestCase cvk;
-    cvk.username = "";
-    cvk.password = "";
+    cvk.username = "wizardgandolf";
+    cvk.password = "you are being hacked UNION SELECT";
     testCases[2] = cvk;
 
     // Dylan Havens
@@ -162,8 +162,8 @@ void additionalStatementAttackTestCases(TestCase testCases[])
 
     // Chris Van Kammen
     TestCase cvk;
-    cvk.username = "";
-    cvk.password = "";
+    cvk.username = "poleroidMan";
+    cvk.password = "; SELECT * FROM passwordList LEFT JOIN myOwnTable on passwordList.passwords=myOwnTable.passwords;";
     testCases[2] = cvk;
 
     // Dylan Havens
@@ -205,8 +205,8 @@ void commentAttackTestCases(TestCase testCases[])
 
     // Chris Van Kammen
     TestCase cvk;
-    cvk.username = "";
-    cvk.password = "";
+    cvk.username = "poleroidMan; --";
+    cvk.password = "password";
     testCases[2] = cvk;
 
     // Dylan Havens
