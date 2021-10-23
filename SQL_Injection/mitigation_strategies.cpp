@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include <iostream>
 #include <algorithm>
 
@@ -9,7 +8,7 @@
  * not sure if we need this it's
  * currently unused
  *************************************/
-inline size_t findCaseInsensitive(std::string data, std::string toSearch, size_t pos = 0)
+size_t findCaseInsensitive(std::string data, std::string toSearch, size_t pos = 0)
 {
     // Convert complete given String to lower case
     std::transform(data.begin(), data.end(), data.begin(), ::tolower);
@@ -24,34 +23,7 @@ inline size_t findCaseInsensitive(std::string data, std::string toSearch, size_t
  * takes an input (querry)
  * returns a weekly sanitized input
  *************************************/
-inline std::string weakMitigation(std::string input)
-{
-    std::string sanitizedInput = input;
-    int i = sanitizedInput.find('\'');
-    sanitizedInput = sanitizedInput.substr(0, i);
-    return sanitizedInput;
-}
-
-/**************************************
- * strong mitigation
- * takes an input name or password
- * returns a totally sanitized input
- * Not 100% sure this is the right approach
- *************************************/
-inline std::string strongMitigation(const std::string input)
-{
-    std::string sanitizedInput = input;
-    int i = sanitizedInput.find('\'');
-    sanitizedInput = sanitizedInput.substr(0, i);
-    return sanitizedInput;
-}
-
-/**************************************
- * ideas for mitigation if test cases
- * break the current process
- * takes an input name or password
- *************************************/
-inline std::string mitigationIdeas(const std::string input)
+std::string weakMitigation(std::string input)
 {
     std::string sanitizedInput = input;
 
@@ -60,20 +32,20 @@ inline std::string mitigationIdeas(const std::string input)
      * example test case:
      * SELECT authenticate FROM passwordList WHERE name='Matthew' and passwd='password' UNION SELECT authenticate FROM passwordList';
      *****************************/
-    std::string search = "UNION"; 
+    std::string search = " UNION ";
     std::size_t index = findCaseInsensitive(sanitizedInput, search);
     if (index != std::string::npos) // union statement at found
-        sanitizedInput = sanitizedInput.substr(0, index);
+        sanitizedInput = sanitizedInput.substr(0, index - 1);
 
     /******************************
      * tautology attack
      * example test case:
      * "SELECT authenticate FROM passwordList WHERE name='Matthew' and passwd='password' OR 'x' = 'x';"
      *****************************/
-    search = "OR";
+    search = " OR "; // spaces to protect words like passwORd
     index = findCaseInsensitive(sanitizedInput, search);
     if (index != std::string::npos)
-        sanitizedInput = sanitizedInput.substr(0, index);
+        sanitizedInput = sanitizedInput.substr(0, index - 1);
 
     /******************************
      * comment attack
@@ -86,9 +58,9 @@ inline std::string mitigationIdeas(const std::string input)
     if (index != std::string::npos && sanitizedInput.find(";") < index) // there is a semicolon before a comment in a query that shouldn't have comments
     {
         std::string s = ";";
-        std::size_t i = sanitizedInput.find(s);                           // the first ';' should be removed and the comment deleted
-        std::string str = sanitizedInput.substr(0, i - 1);                // the first half of the statement minus the ;
-        str += sanitizedInput.substr(index + 3, sanitizedInput.length()); // the comment is the other half of the statement
+        std::size_t i = sanitizedInput.find(s);                               // the first ';' should be removed and the comment deleted
+        std::string str = sanitizedInput.substr(0, i - 1);                    // the first half of the statement minus the ;
+        str += sanitizedInput.substr(index + 3, sanitizedInput.length() - 1); // the comment is the other half of the statement
         sanitizedInput = str;
     }
 
@@ -114,6 +86,20 @@ inline std::string mitigationIdeas(const std::string input)
     // the last char should be the one and only semicolon
     if (index != std::string::npos) // we have an illegal ;
         sanitizedInput = sanitizedInput.substr(0, index - 1);
-    
+
+    return sanitizedInput;
+}
+
+/**************************************
+ * strong mitigation
+ * takes an input name or password
+ * returns a totally sanitized input
+ * Not 100% sure this is the right approach
+ *************************************/
+std::string strongMitigation(const std::string input)
+{
+    std::string sanitizedInput = input;
+    int i = sanitizedInput.find('\'');
+    sanitizedInput = sanitizedInput.substr(0, i);
     return sanitizedInput;
 }

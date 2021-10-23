@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 // returns a string with all alphabetical charecters in their lowercase form
-inline std::string toLowerCase(std::string str)
+std::string toLowerCase(std::string str)
 {
     for (int i = 0; i < str.length(); i++)
     {
@@ -16,7 +16,7 @@ inline std::string toLowerCase(std::string str)
 }
 
 // returns a canonized version of a given string
-inline std::string toCannon(std::string path)
+std::string toCannon(std::string path)
 {
 
     std::string canonizedPath = toLowerCase(path);

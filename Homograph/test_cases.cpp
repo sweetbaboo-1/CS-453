@@ -3,7 +3,7 @@
 #include "homograph.cpp"
 
 // Non Homographs
-inline void nonHomographTests()
+void nonHomographTests()
 {
 
     bool keepRunning = true;
@@ -34,42 +34,26 @@ inline void nonHomographTests()
         std::cin >> userInput;
 
         if (userInput == "1")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathOne) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "2")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathTwo) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "3")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathThree) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "4")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathFour) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "5")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathFive) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "6")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathSix) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "7")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathSeven) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "8")
-        {
             keepRunning = false;
-        }
     }
 }
 
 // Homographs
-inline void homographTests()
+void homographTests()
 {
     bool keepRunning = true;
 
@@ -99,42 +83,26 @@ inline void homographTests()
         std::cin >> userInput;
 
         if (userInput == "1")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathOne) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "2")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathTwo) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "3")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathThree) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "4")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathFour) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "5")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathFive) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "6")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathSix) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "7")
-        {
             std::cout << "These paths are" << (areHomographs(forbiddenPath, testPathSeven) ? " " : " not ") << "homographs\n";
-        }
         else if (userInput == "8")
-        {
             keepRunning = false;
-        }
     }
 }
 
 // runs through all defined test cases to ensure the program is functioning correctly
-inline void testCases()
+void testCases()
 {
     bool keepRunning = true;
     std::string userInput = "";
@@ -148,16 +116,10 @@ inline void testCases()
         std::cin >> userInput;
 
         if (userInput == "1")
-        {
             nonHomographTests();
-        }
         else if (userInput == "2")
-        {
             homographTests();
-        }
         else if (userInput == "3")
-        {
             keepRunning = false;
-        }
     }
 }

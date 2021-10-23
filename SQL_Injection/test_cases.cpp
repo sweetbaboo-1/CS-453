@@ -17,7 +17,7 @@
  * numbers
  * underscores
  *************************************/
-inline void validTestCases(TestCase testCases[])
+void validTestCases(TestCase testCases[])
 {
     // Matthew Peart
     TestCase mp;
@@ -27,8 +27,8 @@ inline void validTestCases(TestCase testCases[])
 
     // Christian Longhurst
     TestCase cl;
-    cl.username = "";
-    cl.password = "";
+    cl.username = "Christian";
+    cl.password = "p@55w0rd";
     testCases[1] = cl;
 
     // Chris Van Kammen
@@ -60,7 +60,7 @@ inline void validTestCases(TestCase testCases[])
  * These test cases MUST demonstrate a 
  * tautology attack
  *************************************/
-inline void tautologyAttackTestCases(TestCase testCases[])
+void tautologyAttackTestCases(TestCase testCases[])
 {
     // Matthew Peart
     TestCase mp;
@@ -103,7 +103,7 @@ inline void tautologyAttackTestCases(TestCase testCases[])
  * These test cases MUST demonstrate a
  * union querry attack
  *************************************/
-inline void unionQueryAttackTestCases(TestCase testCases[])
+void unionQueryAttackTestCases(TestCase testCases[])
 {
     // Matthew Peart
     TestCase mp;
@@ -146,7 +146,7 @@ inline void unionQueryAttackTestCases(TestCase testCases[])
  * These test cases MUST demonstrate a 
  * additonal statement attack
  *************************************/
-inline void additionalStatementAttackTestCases(TestCase testCases[])
+void additionalStatementAttackTestCases(TestCase testCases[])
 {
     // Matthew Peart
     TestCase mp;
@@ -189,7 +189,7 @@ inline void additionalStatementAttackTestCases(TestCase testCases[])
  * These test cases MUST demonstrate a 
  * comment attack
  *************************************/
-inline void commentAttackTestCases(TestCase testCases[])
+void commentAttackTestCases(TestCase testCases[])
 {
     // Matthew Peart
     TestCase mp;
