@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <stdio.h>
 using namespace std;
 
 void one(long number);
@@ -9,6 +10,35 @@ void pass() { cout << "You pass :)\n"; }
 void fail() { cout << "You've failed :(\n"; }
 const char * passMessage = ":)";
 const char * failMessage = ":(";
+
+//Parameter is that of a dynamically allocated variable that is a pointer
+//auto getHeap(auto* d){
+//    return d;
+//}
+template <class H>
+H getHeap (H* d) {
+  return (d);
+}
+
+//Paramter is that of a variable programmatically set
+//auto getStack(auto var){
+//    return &var;
+//}
+template <class S>
+S getStack (S var) {
+  return (&var);
+}
+
+//auto getCodeStack(auto fun){
+//    void (fun_ptr)(int);
+//    fun_ptr = &fun;
+//}
+//Still in progress
+template <class C>
+C getCodeStack(C fun){
+    void (fun_ptr)(int);
+    fun_ptr = &fun;
+}
 
 /**********************************************
  * MAIN : The top of the callstack.
@@ -22,7 +52,7 @@ int main()
    const char * message = failMessage;
 
    // display the initial values of the local variables
-   cout << "main() : " << (void *)memory_organization_main << endl;
+   //cout << "main() : " << (void *)memory_organization_main << endl;
    cout << "\ttext:             " << text              << endl;
    cout << "\tnumber:           " << number            << endl;
    cout << "\tmessage:          " << message           << endl;
