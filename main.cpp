@@ -8,7 +8,7 @@ int main()
     
     while (keepRunning)
     {
-        std::cout << "\n1. Homograph Lab\n2. SQL Injection lab\nQ. Exit\n";
+        std::cout << "\n1. Homograph Lab\n2. SQL Injection Lab\n3. Memory Lab\nQ. Exit\n";
         std::cin >> userInput;
 
         if (userInput == "1") // Homograph Lab
@@ -16,7 +16,7 @@ int main()
         else if (userInput == "2") // SQL Injection Lab
             sql();
         else if (userInput == "3")
-            memory_organization_main();
+            memory_main();
         else if (userInput == "q" || userInput == "Q") // exit
         {
             std::cout << "Thank you, goodbye\n";

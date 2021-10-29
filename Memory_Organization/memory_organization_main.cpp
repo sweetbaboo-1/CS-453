@@ -16,8 +16,8 @@ const char * failMessage = ":(";
 //    return d;
 //}
 template <class H>
-H getHeap (H* d) {
-  return (d);
+H getHeap (H* ptr) {
+  return (ptr);
 }
 
 //Paramter is that of a variable programmatically set
@@ -35,16 +35,16 @@ S getStack (S var) {
 //}
 //Still in progress
 template <class C>
-C getCodeStack(C fun){
-    void (fun_ptr)(int);
-    fun_ptr = &fun;
+C getCodeSegment(C func){
+    void (func_ptr)(int);
+    func_ptr = &func;
 }
 
 /**********************************************
  * MAIN : The top of the callstack.
  **********************************************/
 //void memory_organization_main()
-int main()
+void memory_main()
 {
    char text[8] = "*MAIN**";
    long number = 123456;
@@ -69,8 +69,6 @@ int main()
    cout << "\tmessage:          " << message           << endl;
    cout << "\tfunction pointer: ";
    pointerFunction();
-
-   return 0;
 }
 
 /************************************************
@@ -135,6 +133,15 @@ void two(long number)              // 345678
 
    ////////////////////////////////////////////////
    // Insert code here to change the variables in main()
+
+      // 1) get the address of main()
+      void (*mainAdr)();
+      mainAdr = &memory_main; // function pointer
+      // return address is 16bites
+      cout << "MAIN ADDRESS? -> " << *mainAdr << endl;
+      //cout << *(mainAdr + 17);
+      // currently inside of two, return to one, then return to main
+      // 2) 
                                                                                 
    // change text in main() to "*main**"
 
@@ -146,4 +153,36 @@ void two(long number)              // 345678
 
    //
    ////////////////////////////////////////////////
+} 
+
+/**
+ * 
+//Parameter is that of a dynamically allocated variable that is a pointer
+//auto getHeap(auto* d){
+//    return d;
+//}
+template <class H>
+H getHeap (H* ptr) {
+  return (ptr);
 }
+
+//Paramter is that of a variable programmatically set
+//auto getStack(auto var){
+//    return &var;
+//}
+template <class S>
+S getStack (S var) {
+  return (&var);
+}
+
+//auto getCodeStack(auto fun){
+//    void (fun_ptr)(int);
+//    fun_ptr = &fun;
+//}
+//Still in progress
+template <class C>
+C getCodeStack(C fun){
+    void (fun_ptr)(int);
+    fun_ptr = &fun;
+}
+*/
