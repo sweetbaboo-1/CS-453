@@ -31,7 +31,7 @@ auto getFunctionAddress(T fun){
 /**
  * MAIN : The top of the callstack.
  **/
-int main()
+int memory_main()
 {
    char text[8] = "MAIN**";
    long number = 123456;
@@ -43,7 +43,7 @@ int main()
     cout << "Stack " << getStackAddress(ptr) << endl;
     //cout << "Heap " << getHeapAddress(number1) << endl;
    // display the initial values of the local variables
-   cout << "main() : " << (void *)main << endl;
+   cout << "main() : " << (void *)memory_main << endl;
    cout << "\ttext:             " << text              << endl;
    cout << "\tnumber:           " << number            << endl;
    cout << "\tmessage:          " << message           << endl;
@@ -117,7 +117,7 @@ void two(long number)              // 345678
         << "-----------------+\n";
 
    // Display the Stack     
-   for (long i = 20; i >= -4; i--)   // You may need to change 24 to another number 
+   for (long i = 150; i >= -4; i--)   // You may need to change 24 to another number 
    {
       //bow += i;
       pLong = (&bow) + i; //char* c = "Hello world!" is equivalent to saying char c[] = "Hello world!".
