@@ -9,8 +9,8 @@ void one(long number);
 void two(long number);
 void pass() { cout << "You pass :)\n"; }
 void fail() { cout << "You've failed :(\n"; }
-const char * passMessage = ":)";
-const char * failMessage = ":(";
+const char *passMessage = ":)";
+const char *failMessage = ":(";
 
 //Parameter is that of a dynamically allocated variable that is a pointer
 //auto getHeapAddress(auto* d){
@@ -19,13 +19,15 @@ const char * failMessage = ":(";
 
 //Paramter is that of a variable programmatically set
 template <class T>
-T getStackAddress(T var){
-    return var;
+T getStackAddress(T var)
+{
+   return var;
 }
 
 template <class T>
-auto getFunctionAddress(T fun){
-    return (void*)fun;
+auto getFunctionAddress(T fun)
+{
+   return (void *)fun;
 }
 
 /**
@@ -36,28 +38,28 @@ int memory_main()
    char text[8] = "MAIN**";
    long number = 123456;
    void (*pointerFunction)() = fail;
-   long * number1 = new long();
-   const char * message = failMessage;
-   long* ptr = &number;
-    cout << "getCode " << getFunctionAddress(pointerFunction) << endl;
-    cout << "Stack " << getStackAddress(ptr) << endl;
-    //cout << "Heap " << getHeapAddress(number1) << endl;
+   long *number1 = new long();
+   const char *message = failMessage;
+   long *ptr = &number;
+   cout << "getCode " << getFunctionAddress(pointerFunction) << endl;
+   cout << "Stack " << getStackAddress(ptr) << endl;
+   //cout << "Heap " << getHeapAddress(number1) << endl;
    // display the initial values of the local variables
    cout << "main() : " << (void *)memory_main << endl;
-   cout << "\ttext:             " << text              << endl;
-   cout << "\tnumber:           " << number            << endl;
-   cout << "\tmessage:          " << message           << endl;
+   cout << "\ttext:             " << text << endl;
+   cout << "\tnumber:           " << number << endl;
+   cout << "\tmessage:          " << message << endl;
    cout << "\tfunction pointer: ";
    pointerFunction();
 
    // call the other functions
-   one(number + 111111);     // 234567
+   one(number + 111111); // 234567
 
    // display the new values of the local variables
    cout << "main() - after\n";
-   cout << "\ttext:             " << text              << endl;
-   cout << "\tnumber:           " << number            << endl;
-   cout << "\tmessage:          " << message           << endl;
+   cout << "\ttext:             " << text << endl;
+   cout << "\tnumber:           " << number << endl;
+   cout << "\tmessage:          " << message << endl;
    cout << "\tfunction pointer: ";
    pointerFunction();
 
@@ -70,38 +72,38 @@ int memory_main()
  * by removing all the unprintable characters and replacing
  * them with a dot
  ***********************************************/
-string displayCharArray(const char * p)
+string displayCharArray(const char *p)
 {
    string output;
    for (int i = 0; i < 8; i++)
-       output += string(" ") + (p[i] >= ' ' && p[i] <= 'z' ? p[i] : '.');
+      output += string(" ") + (p[i] >= ' ' && p[i] <= 'z' ? p[i] : '.');
    return output;
 }
 
 /**********************************************
  * ONE : The next item on the call stack
  **********************************************/
-void one(long number)               // 234567
+void one(long number) // 234567
 {
    char text[8] = "**ONE**";
 
    cout << "one() : " << (void *)one << endl;
    cout << "\tmessage: " << (void *)failMessage << endl;
-   cout << "\tfail():  " << (void *)fail        << endl;
+   cout << "\tfail():  " << (void *)fail << endl;
 
-   two(number + 111111);    // 345678
+   two(number + 111111); // 345678
 }
 
 /**********************************************
  * TWO : The bottom of the call stack
  **********************************************/
-void two(long number)              // 345678
+void two(long number) // 345678
 {
    // start your display of the stack from this point
-   long bow = number + 111111;     // 456789
+   long bow = number + 111111; // 456789
    char text[8] = "**TWO**";
-   long * pLong = NULL;
-   char * pChar = NULL;
+   long *pLong = NULL;
+   char *pChar = NULL;
 
    // header for our table. Use these setw() offsets in your table
    cout << '[' << setw(2) << 'i' << ']'
@@ -116,43 +118,53 @@ void two(long number)              // 345678
         << "-------------------+"
         << "-----------------+\n";
 
-   // Display the Stack     
-   for (long i = 150; i >= -4; i--)   // You may need to change 24 to another number 
+   // Display the Stack
+   for (long i = 150; i >= -4; i--) // You may need to change 24 to another number
    {
       //bow += i;
       pLong = (&bow) + i; //char* c = "Hello world!" is equivalent to saying char c[] = "Hello world!".
-      pChar = (char*)(pLong);
+      pChar = (char *)(pLong);
       cout << '[' << setw(2) << i << ']'
-        << setw(15) << pLong
-        << setw(20) << std::hex << *pLong
-        << setw(20) << std::dec << (*pLong)
-        << setw(18) << displayCharArray(pChar)
-        << endl;
+           << setw(15) << pLong
+           << setw(20) << std::hex << *pLong
+           << setw(20) << std::dec << (*pLong)
+           << setw(18) << displayCharArray(pChar)
+           << endl;
    }
 
    ////////////////////////////////////////////////
    // Insert code here to change the variables in main()
 
-      // 1) get the address of main()
-     // void (*mainAdr)();
-      // mainAdr = &memory_main; // function pointer
-      // return address is 16bites
-     // cout << "MAIN ADDRESS? -> " << *mainAdr << endl;
-      //cout << *(mainAdr + 17);
-      // currently inside of two, return to one, then return to main
-      // 2) 
-                                                                                
+   // 1) get the address of main()
+   // void (*mainAdr)();
+   // mainAdr = &memory_main; // function pointer
+   // return address is 16bites
+   // cout << "MAIN ADDRESS? -> " << *mainAdr << endl;
+   //cout << *(mainAdr + 17);
+   // currently inside of two, return to one, then return to main
+   // 2)
+
    // change text in main() to "*main**"
-
+   pLong = (&bow) + 51;
+   pChar = (char *)(pLong);
+   pChar[0] = '*';
+   pChar[1] = 'M';
+   pChar[2] = 'A';
+   pChar[3] = 'I';
+   pChar[4] = 'N';
+   pChar[5] = '*';
+   pChar[6] = '*';
    // change number in main() to 654321
-
+   //pLong = (&bow) + 53; // 53 isn't right  
+   //*pLong = (long)654321;
+   
    // change pointerFunction in main() to point to pass
 
    // change message in main() to point to passMessage
 
    //
    ////////////////////////////////////////////////
-} 
+}
 
 /**
  * 
