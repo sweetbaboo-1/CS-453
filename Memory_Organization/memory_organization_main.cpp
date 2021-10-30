@@ -13,9 +13,9 @@ const char * passMessage = ":)";
 const char * failMessage = ":(";
 
 //Parameter is that of a dynamically allocated variable that is a pointer
-auto getHeapAddress(auto* d){
-    return d;
-}
+//auto getHeapAddress(auto* d){
+//    return d;
+//}
 
 //Paramter is that of a variable programmatically set
 template <class T>
@@ -41,7 +41,7 @@ int memory_main()
    long* ptr = &number;
     cout << "getCode " << getFunctionAddress(pointerFunction) << endl;
     cout << "Stack " << getStackAddress(ptr) << endl;
-    cout << "Heap " << getHeapAddress(number1) << endl;
+    //cout << "Heap " << getHeapAddress(number1) << endl;
    // display the initial values of the local variables
    cout << "main() : " << (void *)memory_main << endl;
    cout << "\ttext:             " << text              << endl;
@@ -128,10 +128,10 @@ void two(long number)              // 345678
    // Insert code here to change the variables in main()
 
       // 1) get the address of main()
-      void (*mainAdr)();
+     // void (*mainAdr)();
       // mainAdr = &memory_main; // function pointer
       // return address is 16bites
-      cout << "MAIN ADDRESS? -> " << *mainAdr << endl;
+     // cout << "MAIN ADDRESS? -> " << *mainAdr << endl;
       //cout << *(mainAdr + 17);
       // currently inside of two, return to one, then return to main
       // 2) 
