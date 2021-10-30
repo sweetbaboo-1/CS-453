@@ -119,7 +119,7 @@ void two(long number) // 345678
         << "-----------------+\n";
 
    // Display the Stack
-   for (long i = 150; i >= -4; i--) // You may need to change 24 to another number
+   for (long i = 150; i >= -5; i--) // You may need to change 24 to another number
    {
       //bow += i;
       pLong = (&bow) + i; //char* c = "Hello world!" is equivalent to saying char c[] = "Hello world!".
@@ -135,15 +135,6 @@ void two(long number) // 345678
    ////////////////////////////////////////////////
    // Insert code here to change the variables in main()
 
-   // 1) get the address of main()
-   // void (*mainAdr)();
-   // mainAdr = &memory_main; // function pointer
-   // return address is 16bites
-   // cout << "MAIN ADDRESS? -> " << *mainAdr << endl;
-   //cout << *(mainAdr + 17);
-   // currently inside of two, return to one, then return to main
-   // 2)
-
    // change text in main() to "*main**"
    pLong = (&bow) + 51;
    pChar = (char *)(pLong);
@@ -155,45 +146,17 @@ void two(long number) // 345678
    pChar[5] = '*';
    pChar[6] = '*';
    // change number in main() to 654321
-   //pLong = (&bow) + 53; // 53 isn't right  
-   //*pLong = (long)654321;
+   pLong = (&bow) + 50;
+   *pLong = (long)654321;
    
    // change pointerFunction in main() to point to pass
+   //void (*ptr)() = (&bow) + 49;
+   //pLong = (&bow) + 49;
+   //void (*pointerFunction)() = fail;
+   //*pLong = &pass;
 
    // change message in main() to point to passMessage
 
    //
    ////////////////////////////////////////////////
 }
-
-/**
- * 
-//Parameter is that of a dynamically allocated variable that is a pointer
-//auto getHeap(auto* d){
-//    return d;
-//}
-template <class H>
-H getHeap (H* ptr) {
-  return (ptr);
-}
-
-//Paramter is that of a variable programmatically set
-//auto getStack(auto var){
-//    return &var;
-//}
-template <class S>
-S getStack (S var) {
-  return (&var);
-}
-
-//auto getCodeStack(auto fun){
-//    void (fun_ptr)(int);
-//    fun_ptr = &fun;
-//}
-//Still in progress
-template <class C>
-C getCodeStack(C fun){
-    void (fun_ptr)(int);
-    fun_ptr = &fun;
-}
-*/
