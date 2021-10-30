@@ -51,7 +51,7 @@ int memory_main()
    pointerFunction();
 
    // call the other functions
-//    one(number + 111111);     // 234567
+   one(number + 111111);     // 234567
 
    // display the new values of the local variables
    cout << "main() - after\n";
