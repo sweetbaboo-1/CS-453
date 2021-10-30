@@ -13,9 +13,9 @@ const char *passMessage = ":)";
 const char *failMessage = ":(";
 
 //Parameter is that of a dynamically allocated variable that is a pointer
-//auto getHeapAddress(auto* d){
-//    return d;
-//}
+auto getHeapAddress(auto* d){
+    return d;
+}
 
 //Paramter is that of a variable programmatically set
 template <class T>
