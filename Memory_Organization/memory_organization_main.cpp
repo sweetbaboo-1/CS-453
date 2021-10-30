@@ -119,18 +119,17 @@ void two(long number) // 345678
         << "-----------------+\n";
 
    // Display the Stack
-   for (long i = 102; i >= -5; i--) // You may need to change 24 to another number
+   for (long i = 150; i >= -5; i--) // You may need to change 24 to another number
    {
       pLong = (&bow) + i; //char* c = "Hello world!" is equivalent to saying char c[] = "Hello world!".
       pChar = (char *)(pLong);
       cout << '[' << setw(2) << i << ']'
-           << setw(15) << pLong // display the address in the stack
-           << setw(20) << std::hex << *pLong // display the data in memory in hexidecimal form
-           << setw(20) << std::dec << (*pLong) // display the data in memory in decimal form
+           << setw(15) << pLong                   // display the address in the stack
+           << setw(20) << std::hex << *pLong      // display the data in memory in hexidecimal form
+           << setw(20) << std::dec << (*pLong)    // display the data in memory in decimal form
            << setw(18) << displayCharArray(pChar) // display the data in character form
            << endl;
    }
-
    ////////////////////////////////////////////////
    // Insert code here to change the variables in main()
 
@@ -147,7 +146,7 @@ void two(long number) // 345678
    // change number in main() to 654321
    pLong = (&bow) + 50;
    *pLong = (long)654321;
-   
+
    // change pointerFunction in main() to point to pass
    //void (*ptr)() = (&bow) + 49;
    //pLong = (&bow) + 49;
