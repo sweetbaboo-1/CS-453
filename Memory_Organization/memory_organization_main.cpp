@@ -1,7 +1,8 @@
+#include <stdio.h>
+#include <string>
 #include <iostream>
 #include <iomanip>
-#include <string>
-#include <stdio.h>
+
 using namespace std;
 
 void one(long number);
@@ -12,47 +13,37 @@ const char * passMessage = ":)";
 const char * failMessage = ":(";
 
 //Parameter is that of a dynamically allocated variable that is a pointer
-//auto getHeap(auto* d){
-//    return d;
-//}
-template <class H>
-H getHeap (H* ptr) {
-  return (ptr);
+auto getHeapAddress(auto* d){
+    return d;
 }
 
 //Paramter is that of a variable programmatically set
-//auto getStack(auto var){
-//    return &var;
-//}
-template <class S>
-S getStack (S var) {
-  return (&var);
+template <class T>
+T getStackAddress(T var){
+    return var;
 }
 
-//auto getCodeStack(auto fun){
-//    void (fun_ptr)(int);
-//    fun_ptr = &fun;
-//}
-//Still in progress
-template <class C>
-C getCodeSegment(C func){
-    void (func_ptr)(int);
-    func_ptr = &func;
+template <class T>
+auto getFunctionAddress(T fun){
+    return (void*)fun;
 }
 
-/**********************************************
+/**
  * MAIN : The top of the callstack.
- **********************************************/
-//void memory_organization_main()
-void memory_main()
+ **/
+int memory_main()
 {
-   char text[8] = "*MAIN**";
+   char text[8] = "MAIN**";
    long number = 123456;
    void (*pointerFunction)() = fail;
+   long * number1 = new long();
    const char * message = failMessage;
-
+   long* ptr = &number;
+    cout << "getCode " << getFunctionAddress(pointerFunction) << endl;
+    cout << "Stack " << getStackAddress(ptr) << endl;
+    cout << "Heap " << getHeapAddress(number1) << endl;
    // display the initial values of the local variables
-   //cout << "main() : " << (void *)memory_organization_main << endl;
+   cout << "main() : " << (void *)memory_main << endl;
    cout << "\ttext:             " << text              << endl;
    cout << "\tnumber:           " << number            << endl;
    cout << "\tmessage:          " << message           << endl;
@@ -60,7 +51,7 @@ void memory_main()
    pointerFunction();
 
    // call the other functions
-   one(number + 111111);     // 234567
+//    one(number + 111111);     // 234567
 
    // display the new values of the local variables
    cout << "main() - after\n";
@@ -69,6 +60,8 @@ void memory_main()
    cout << "\tmessage:          " << message           << endl;
    cout << "\tfunction pointer: ";
    pointerFunction();
+
+   return 0;
 }
 
 /************************************************
@@ -136,7 +129,7 @@ void two(long number)              // 345678
 
       // 1) get the address of main()
       void (*mainAdr)();
-      mainAdr = &memory_main; // function pointer
+      // mainAdr = &memory_main; // function pointer
       // return address is 16bites
       cout << "MAIN ADDRESS? -> " << *mainAdr << endl;
       //cout << *(mainAdr + 17);
