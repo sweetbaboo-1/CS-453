@@ -43,7 +43,7 @@ int memory_main()
    long *ptr = &number;
    cout << "getCode " << getFunctionAddress(pointerFunction) << endl;
    cout << "Stack " << getStackAddress(ptr) << endl;
-   //cout << "Heap " << getHeapAddress(number1) << endl;
+   cout << "Heap " << getHeapAddress(number1) << endl;
    // display the initial values of the local variables
    cout << "main() : " << (void *)memory_main << endl;
    cout << "\ttext:             " << text << endl;
