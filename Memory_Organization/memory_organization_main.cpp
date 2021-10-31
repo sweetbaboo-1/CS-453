@@ -119,22 +119,25 @@ void two(long number) // 345678
         << "-----------------+\n";
 
    // Display the Stack
-   for (long i = 150; i >= -5; i--) // You may need to change 24 to another number
+   // starts at 150
+   for (long i = 160; i >= -5; i--) // You may need to change 24 to another number
    {
+      //bow += i;
       pLong = (&bow) + i; //char* c = "Hello world!" is equivalent to saying char c[] = "Hello world!".
       pChar = (char *)(pLong);
       cout << '[' << setw(2) << i << ']'
-           << setw(15) << pLong                   // display the address in the stack
-           << setw(20) << std::hex << *pLong      // display the data in memory in hexidecimal form
-           << setw(20) << std::dec << (*pLong)    // display the data in memory in decimal form
-           << setw(18) << displayCharArray(pChar) // display the data in character form
+           << setw(15) << pLong
+           << setw(20) << std::hex << *pLong
+           << setw(20) << std::dec << (*pLong)
+           << setw(18) << displayCharArray(pChar)
            << endl;
    }
+
    ////////////////////////////////////////////////
    // Insert code here to change the variables in main()
 
    // change text in main() to "*main**"
-   pLong = (&bow) + 51;
+   pLong = (&bow) + 137;
    pChar = (char *)(pLong);
    pChar[0] = '*';
    pChar[1] = 'M';
@@ -144,17 +147,15 @@ void two(long number) // 345678
    pChar[5] = '*';
    pChar[6] = '*';
    // change number in main() to 654321
-   pLong = (&bow) + 50;
+   pLong = (&bow) + 144;
    *pLong = (long)654321;
-
-   // change pointerFunction in main() to point to pass
-   //void (*ptr)() = (&bow) + 49;
-   //pLong = (&bow) + 49;
-   //void (*pointerFunction)() = fail;
-   //*pLong = &pass;
+   
+   //change pointerFunction in main() to point to pass
+   pLong = (&bow) + 149;
+   *pLong = (long)pass; // changing the address where the pointer points
 
    // change message in main() to point to passMessage
-
-   //
+   pLong = (&bow + 153);
+   *pLong = (long)passMessage;
    ////////////////////////////////////////////////
 }
