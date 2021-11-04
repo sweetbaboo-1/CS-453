@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Memory_Organization\memory_organization_main.cpp" />
+    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\ansi.cpp" />
+    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\arcInjection.cpp" />
+    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\integer.cpp" />
+    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\vtable.cpp" />
+    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\vulnerabilitiesExploitsMain.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
