@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 #include <string>
 #include <iostream>
@@ -33,6 +34,8 @@ auto getFunctionAddress(T fun)
 /**
  * MAIN : The top of the callstack.
  **/
+
+/*
 int memory_main()
 {
    char text[8] = "MAIN**";
@@ -71,7 +74,7 @@ int memory_main()
  * Convert the data from p into a human-readable string
  * by removing all the unprintable characters and replacing
  * them with a dot
- ***********************************************/
+ ***********************************************
 string displayCharArray(const char *p)
 {
    string output;
@@ -82,7 +85,7 @@ string displayCharArray(const char *p)
 
 /**********************************************
  * ONE : The next item on the call stack
- **********************************************/
+ **********************************************
 void one(long number) // 234567
 {
    char text[8] = "**ONE**";
@@ -96,7 +99,7 @@ void one(long number) // 234567
 
 /**********************************************
  * TWO : The bottom of the call stack
- **********************************************/
+ **********************************************
 void two(long number) // 345678
 {
    // start your display of the stack from this point
@@ -159,3 +162,4 @@ void two(long number) // 345678
    *pLong = (long)passMessage;
    ////////////////////////////////////////////////
 }
+*/
