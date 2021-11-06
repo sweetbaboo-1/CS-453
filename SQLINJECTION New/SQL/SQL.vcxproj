@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\ansi.cpp" />
-    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\arcInjection.cpp" />
-    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\integer.cpp" />
-    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\vtable.cpp" />
-    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\vulnerabilitiesExploitsMain.cpp" />
+    <ClCompile Include="..\..\Vulnerabilities_Exploits\ansi.cpp" />
+    <ClCompile Include="..\..\Vulnerabilities_Exploits\arcInjection.cpp" />
+    <ClCompile Include="..\..\Vulnerabilities_Exploits\integer.cpp" />
+    <ClCompile Include="..\..\Vulnerabilities_Exploits\vtable.cpp" />
+    <ClCompile Include="..\..\Vulnerabilities_Exploits\vulnerabilitiesExploitsMain.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -15,19 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\vulnerabilitiesExploitsMain.cpp">
+    <ClCompile Include="..\..\Vulnerabilities_Exploits\ansi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\arcInjection.cpp">
+    <ClCompile Include="..\..\Vulnerabilities_Exploits\arcInjection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\vtable.cpp">
+    <ClCompile Include="..\..\Vulnerabilities_Exploits\integer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\ansi.cpp">
+    <ClCompile Include="..\..\Vulnerabilities_Exploits\vtable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\W08 LAB VULNERABILITIES &amp; EXPLOITS\integer.cpp">
+    <ClCompile Include="..\..\Vulnerabilities_Exploits\vulnerabilitiesExploitsMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
