@@ -19,11 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Vulnerabilities_Exploits\ansi.cpp" />
-    <ClCompile Include="..\..\Vulnerabilities_Exploits\arcInjection.cpp" />
-    <ClCompile Include="..\..\Vulnerabilities_Exploits\integer.cpp" />
-    <ClCompile Include="..\..\Vulnerabilities_Exploits\vtable.cpp" />
-    <ClCompile Include="..\..\Vulnerabilities_Exploits\vulnerabilitiesExploitsMain.cpp" />
+    <ClCompile Include="..\..\THREAT MODEL\mainThreatModel.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

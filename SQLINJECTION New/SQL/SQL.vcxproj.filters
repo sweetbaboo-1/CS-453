@@ -15,19 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Vulnerabilities_Exploits\ansi.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Vulnerabilities_Exploits\arcInjection.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Vulnerabilities_Exploits\integer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Vulnerabilities_Exploits\vtable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Vulnerabilities_Exploits\vulnerabilitiesExploitsMain.cpp">
+    <ClCompile Include="..\..\THREAT MODEL\mainThreatModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
