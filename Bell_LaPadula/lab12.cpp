@@ -101,7 +101,8 @@ void session(Messages & messages)
  * MAIN
  * Where it all begins and where it all ends
  ***************************************************/
-void lab12main()
+//void lab12main()
+int main()
 {
    Messages messages(FILE_NAME);
 
@@ -117,4 +118,6 @@ void lab12main()
       done = (selection == 'y' || selection == 'Y') ? false : true;
    }
    while (!done);   
+
+   return 0;
 }

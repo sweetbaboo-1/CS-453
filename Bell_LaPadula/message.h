@@ -7,7 +7,10 @@
 *    This class stores the notion of a message
 ************************************************************************/
 
-#pragma once
+#ifndef MESSAGE_H
+#define MESSAGE_H
+
+
 
 #include <string>     // for convenience
 #include "control.h"  // for all the control stuff
@@ -51,3 +54,5 @@ private:
    std::string author;       // the author of this message
    std::string date;         // the date this message was created
 };
+
+#endif //PATHDEBUNKER_CPP_MESSAGE_H

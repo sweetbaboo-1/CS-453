@@ -7,7 +7,8 @@
  *    This class allows one user to interact with the system
  ************************************************************************/
 
-#pragma once
+#ifndef INTERACT_H
+#define INTERACT_H
 
 #include <string>     // for convenience
 #include "messages.h" // to interact with the collection of messages
@@ -69,3 +70,6 @@ private:
 
 // display the set of users in the system
 void displayUsers();
+
+
+#endif //PATHDEBUNKER_CPP_INTERACT_H

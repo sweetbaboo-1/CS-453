@@ -25,7 +25,7 @@ void bellLaPadula()
 
         if (userInput == "1") // test cases
         {
-            lab12main();
+            main();
         }
         else if (userInput == "2") // custom paths
         {

@@ -6,8 +6,8 @@
  * Summary:
  *    This class stores the notion of a collection of messages
  ************************************************************************/
-
-#pragma once
+#ifndef MESSAGES_H
+#define MESSAGES_H
 
 #include <string>     // for convenience
 #include <list>       // to store the messages
@@ -49,3 +49,5 @@ private:
    // read the messages from a file
    void readMessages(const char * fileName);
 };
+
+#endif //PATHDEBUNKER_CPP_MESSAGES_H

@@ -6,6 +6,11 @@
  * Summary:
  *    This class stores the notion of Bell-LaPadula
  ************************************************************************/
+
+#ifndef CONTROL_H
+#define CONTROL_H
+
+
 #include <iomanip>
 #include <string>
 #include <iostream>
@@ -51,3 +56,5 @@ bool securityConditionWrite(Control assetControl, Control subjectControl)
 {
     return subjectControl <= assetControl;
 }
+
+#endif //PATHDEBUNKER_CPP_INTERACT_H
