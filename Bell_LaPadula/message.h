@@ -1,3 +1,5 @@
+#ifndef MESSAGE_H
+#define MESSAGE_H
 /***********************************************************************
 * COMPONENT:
 *    MESSAGE
@@ -51,3 +53,4 @@ private:
    std::string author;       // the author of this message
    std::string date;         // the date this message was created
 };
+#endif

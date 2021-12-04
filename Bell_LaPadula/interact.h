@@ -1,3 +1,5 @@
+#ifndef INTERACT_H
+#define INTERACT_H
 /***********************************************************************
  * COMPONENT:
  *    INTERACT
@@ -69,3 +71,4 @@ private:
 
 // display the set of users in the system
 void displayUsers();
+#endif

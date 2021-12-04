@@ -1,3 +1,5 @@
+#ifndef MESSAGES_H
+#define MESSAGES_H
 /***********************************************************************
  * COMPONENT:
  *    MESSAGES
@@ -49,3 +51,4 @@ private:
    // read the messages from a file
    void readMessages(const char * fileName);
 };
+#endif

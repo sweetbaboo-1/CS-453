@@ -1,3 +1,5 @@
+#ifndef CONTROL_H
+#define CONTROL_H
 /***********************************************************************
  * COMPONENT:
  *    CONTROL
@@ -51,3 +53,4 @@ bool securityConditionWrite(Control assetControl, Control subjectControl)
 {
     return subjectControl <= assetControl;
 }
+#endif
