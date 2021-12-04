@@ -101,7 +101,7 @@ void session(Messages & messages)
  * MAIN
  * Where it all begins and where it all ends
  ***************************************************/
-int main()
+void lab12main()
 {
    Messages messages(FILE_NAME);
 
@@ -116,7 +116,5 @@ int main()
       cin.ignore();
       done = (selection == 'y' || selection == 'Y') ? false : true;
    }
-   while (!done);
-   
-   return 0;
+   while (!done);   
 }

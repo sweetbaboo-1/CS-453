@@ -2,11 +2,52 @@
  * COMPONENT:
  *    CONTROL
  * Author:
- *    Br. Helfrich, <your name here if you made a change>
+ *    Br. Helfrich, <Matthew Peart>
  * Summary:
  *    This class stores the notion of Bell-LaPadula
  ************************************************************************/
+#include <iomanip>
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 #pragma once
 
-// you may need to put something here...
+enum Control
+{
+    PUBLIC,
+    CONFIDENTIAL,
+    PRIVILEGED,
+    SECRET
+};
+
+
+/* TODO: make it easier to add users*/
+Control authenticate(string username, string password)
+{
+    Control control;
+    // returns public confidential privileged secret depending on the status of the user
+    if      (username == "AdmiralAbe"     && password == "password")
+        return control = SECRET;
+    else if (username == "CaptainCharlie" && password == "password")
+        return control = PRIVILEGED;
+    else if (username == "SeamanSam"      && password == "password")
+        return control = CONFIDENTIAL;
+    else if (username == "SeamanSue"      && password == "password")
+        return control = CONFIDENTIAL;
+    else if (username == "SeamanSly"      && password == "password")
+        return control = CONFIDENTIAL;
+    else
+        return control = PUBLIC;
+}
+
+bool securityConditionRead(Control assetControl, Control subjectControl)
+{
+    return subjectControl >= assetControl;
+}
+
+bool securityConditionWrite(Control assetControl, Control subjectControl)
+{
+    return subjectControl <= assetControl;
+}

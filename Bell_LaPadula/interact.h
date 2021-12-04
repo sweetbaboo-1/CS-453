@@ -2,7 +2,7 @@
  * COMPONENT:
  *    INTERACT
  * Author:
- *    Br. Helfrich, <your name here if you made a change>
+ *    Br. Helfrich, <Matthew Peart>
  * Summary:
  *    This class allows one user to interact with the system
  ************************************************************************/
@@ -60,7 +60,7 @@ private:
    int promptForId(const char * verb) const;
 
    // authenticate the user;
-   void authenticate(const std::string & userName,
+   bool authenticate(const std::string & userName,
                      const std::string & password) const;
 
    // find the ID of a given user

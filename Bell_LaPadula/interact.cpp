@@ -2,7 +2,7 @@
  * COMPONENT:
  *    INTERACT
  * Author:
- *    Br. Helfrich, <your name here if you made a change>
+ *    Br. Helfrich, <Matthew>
  * Summary:
  *    This class allows one user to interact with the system
  ************************************************************************/
@@ -133,13 +133,14 @@ int Interact::promptForId(const char * verb) const
  * INTERACT :: AUTHENTICATION
  * authenticate the user: find their control level
  ****************************************************/
-void Interact::authenticate(const string & userName,
+bool Interact::authenticate(const string & userName,
                             const string & password) const
 {
    int id = idFromUser(userName);
    bool authenticated = false;
    if (ID_INVALID != id && password == string(users[id].password))
       authenticated = true;
+   return authenticated;
 }
 
 /****************************************************
