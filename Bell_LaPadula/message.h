@@ -9,9 +9,6 @@
 *    This class stores the notion of a message
 ************************************************************************/
 
-#ifndef MESSAGE_H
-#define MESSAGE_H
-
 
 
 #include <string>     // for convenience
@@ -57,4 +54,4 @@ private:
    std::string date;         // the date this message was created
 };
 
-#endif //PATHDEBUNKER_CPP_MESSAGE_H
+#endif MESSAGE_H//PATHDEBUNKER_CPP_MESSAGE_H

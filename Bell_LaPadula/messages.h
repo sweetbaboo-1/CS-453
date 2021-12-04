@@ -8,8 +8,6 @@
  * Summary:
  *    This class stores the notion of a collection of messages
  ************************************************************************/
-#ifndef MESSAGES_H
-#define MESSAGES_H
 
 #include <string>     // for convenience
 #include <list>       // to store the messages

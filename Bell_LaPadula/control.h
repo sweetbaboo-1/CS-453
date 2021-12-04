@@ -9,9 +9,6 @@
  *    This class stores the notion of Bell-LaPadula
  ************************************************************************/
 
-#ifndef CONTROL_H
-#define CONTROL_H
-
 
 #include <iomanip>
 #include <string>
