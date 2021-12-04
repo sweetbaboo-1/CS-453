@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// 3 menu options, run test cases, enter two file paths, quit
 
 void bellLaPadula()
 {
@@ -19,13 +18,13 @@ void bellLaPadula()
     // while the user hasn't quit
     while (keepRunning)
     {
-        std::cout << "\n1. Option 1\n2. Option 2\n3. Exit\n";
+        std::cout << "\n1. Run Bell-LaPadula Lab\n2. Option 2\n3. Exit\n";
         std::cin >> userInput;
         std::cout << "\n";
 
         if (userInput == "1") // test cases
         {
-            cout << "user input 1" << endl;
+            cout << "run the lab\n";
         }
         else if (userInput == "2") // custom paths
         {
