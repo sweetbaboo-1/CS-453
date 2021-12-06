@@ -15,7 +15,7 @@
 
 using namespace std;
 
-#pragma once
+
 
 enum Control
 {
@@ -27,7 +27,7 @@ enum Control
 
 
 /* TODO: make it easier to add users*/
-Control authenticate(string username, string password)
+inline Control authenticate(string username, string password)
 {
     Control control;
     // returns public confidential privileged secret depending on the status of the user
@@ -45,12 +45,12 @@ Control authenticate(string username, string password)
         return control = PUBLIC;
 }
 
-bool securityConditionRead(Control assetControl, Control subjectControl)
+inline bool securityConditionRead(Control assetControl, Control subjectControl)
 {
     return subjectControl >= assetControl;
 }
 
-bool securityConditionWrite(Control assetControl, Control subjectControl)
+inline bool securityConditionWrite(Control assetControl, Control subjectControl)
 {
     return subjectControl <= assetControl;
 }
