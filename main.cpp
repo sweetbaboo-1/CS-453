@@ -2,6 +2,7 @@
 #include "SQL_Injection/sql_main.cpp"
 // #include "Memory_Organization/memory_organization_main.cpp"
 #include "Vulnerabilities_Exploits/vulnerabilitiesExploitsMain.cpp"
+#include "Encryption/ui.cpp"
 
 int main()
 {
@@ -10,7 +11,7 @@ int main()
 
     while (keepRunning)
     {
-        std::cout << "\n1. Homograph Lab\n2. SQL Injection Lab\n3. Memory Lab\n4. Vulnerabilites and Exploits Lab\n5. Bell-LaPadula\nQ. Exit\n";
+        std::cout << "\n1. Homograph Lab\n2. SQL Injection Lab\n3. Memory Lab\n4. Vulnerabilites and Exploits Lab\n5. Encryption\nQ. Exit\n";
         std::cin >> userInput;
 
         if (userInput == "1") // Homograph Lab
@@ -23,7 +24,7 @@ int main()
         else if (userInput == "4")
             vulnerabilitiesExploitsMain();
         else if (userInput == "5")
-            encriptionMain();
+            Encryption_lab_main();
         else if (userInput == "q" || userInput == "Q") // exit
         {
             std::cout << "Thank you, goodbye\n";

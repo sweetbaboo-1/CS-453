@@ -167,7 +167,7 @@ public:
  * MAIN
  * drives the UI class
  ********************************************************************/
-int main()
+void Encryption_lab_main()
 {
    UI interface;
    int index;
@@ -175,10 +175,8 @@ int main()
    index = interface.menu(); // show the menu and get cipher index
 
    if (index == -1) // if index == -1 then quit
-      return 0;
+      return;
 
    interface.getText(); // get the plaintext and password
    interface.getReport(index); // generate the report
-
-   return 0;
 }
