@@ -82,9 +82,10 @@ public:
       string cipher = "";
       for (int i = 0; i < str.length(); i++)
       {
-         int x = (((A * (str[i])) + getBfromPassword(password)) % M);
+         int x = ((A * (str[i]) + getBfromPassword(password)) % M);
          while (x > M)
-            x -= M;
+            x = x % M;
+            //x -= M;
          cipher += (char)x;
       }
 
