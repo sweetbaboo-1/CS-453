@@ -5,6 +5,8 @@
 ********************************************************************/
 #ifndef CIPHER01_H
 #define CIPHER01_H
+#define M 95 // the size of alphabet
+#define A 3  // this is co prime to m 95 = 5 * 19, 3 = 3
 
 /********************************************************************
  * CLASS
@@ -28,7 +30,7 @@ public:
       std::string s;
       s += "Geeks for Geeks (2021), ";
       s += "\"Implementation of Affine Cipher\" \n retrieved: 2021\n";
-      s += "https://www.geeksforgeeks.org/implementation-affine-cipher/";
+      s += "https://www.geeksforgeeks.org/implementation-affine-cipher/\n";
       return s;
    }
 
@@ -42,93 +44,124 @@ public:
       // TODO: please format your pseudocode
       // The encrypt pseudocode
 
-      str += "E ( x ) = ( a x + b ) mod m \n";
-      str += "modulus m: size of the alphabet\n";
-      str += "a and b: key of the cipher\n.";
-      str += "a must be chosen such that a and m are coprime.";
+      str += "encrypt(plainText, password)\n";
+      str += "    for x is all values in plainText\n";
+      str += "       cipher += (ax + b) % m\n";
+      str += "a must be coprime to m where m = size of alphabet\n";
+      str += "b must be integer value\n\n";
 
       // The decrypt pseudocode
-      str += "D ( x ) = a^-1 ( x - b ) mod m\n";
-      str += "a^-1 : modular multiplicative inverse of a modulo m. i.e., it satisfies the equation\n";
-      str += "1 = a a^-1 mod m .";
+      str += "decrypt(plainText, password)\n";
+      str += "    for x is all values in plainText\n";
+      str += "       decipher += a^-1 (x - b) mod m\n";
+      str += "return decipher\n\n";
 
+      // The getBfromPassword pseudocode
+      str += "getBfromPassword(password)\n";
+      str += "    for x is all values in password\n";
+      str += "       b *= int(x)\n";
+      str += "return b";
       return str;
    }
 
    /**********************************************************
     * ENCRYPT
-    * TODO: ADD description
+    * This code uses the AFFINE cipher algorithm to encript
+    * plaintext using a set of keys (a, b)
+    * f(x) = (ax + b) % m
     **********************************************************/
    virtual std::string encrypt(const std::string &plainText, const std::string &password)
    {
-      int b = getBfromPassword(password);
 
-      ///Cipher Text initially empty
-      string cipher = "";
+      // shift everything down the ascii table by the value of the first char in our alphabet ' '
+      string str = "";
       for (int i = 0; i < plainText.length(); i++)
+         str += plainText[i] - ' '; // make our chars 0 based
+
+      // encript everything using the formula f(x) = ax + b % m
+      string cipher = "";
+      for (int i = 0; i < str.length(); i++)
       {
-         // Avoid space to be encrypted
-         if (plainText[i] != ' ')
-            /* applying encryption formula ( a x + b ) mod m
-            {here x is msg[i] and m is 26} and added 'A' to
-            bring it in range of ascii alphabet[ 65-90 | A-Z ] */
-            cipher = cipher +
-                     (char)((((a * (plainText[i] - 'A')) + b) % 26) + 'A');
-         else
-            //else simply append space character
-            cipher += plainText[i];
+         int x = (((A * (str[i])) + getBfromPassword(password)) % M);
+         while (x > M)
+            x -= M;
+         cipher += (char)x;
       }
+
+      // shift everything up the ascii table by the value ' ' undoing what we did earlier
+      for (int i = 0; i < cipher.length(); i++)
+         cipher[i] = cipher[i] + ' ';
+
       return cipher;
    }
 
    /**********************************************************
     * DECRYPT
-    * TODO: ADD description
+    * This code reverses the encription process using the same
+    * key pair (a, b)
+    * A mutplicative inverse of 'a' must be found to solve
+    * for x in the equation f(x) = (ax + b) % M
+    * x = a^-1(x - b) % M
     **********************************************************/
-   virtual std::string decrypt(const std::string &cipherText, const std::string &password)
+   virtual std::string decrypt(const std::string &cipher, const std::string &password)
    {
-      string msg = "";
+      // mutiplicative inverse logic copied from https://www.geeksforgeeks.org/implementation-affine-cipher/
+      // source
       int a_inv = 0;
       int flag = 0;
-      int b = getBfromPassword(password);
 
-      //Find a^-1 (the multiplicative inverse of a
-      //in the group of integers modulo m.)
-      for (int i = 0; i < 26; i++)
+      for (int i = 0; i < M; i++)
       {
-         flag = (a * i) % 26;
+         flag = (A * i) % M;
 
-         //Check if (a*i)%26 == 1,
+         //Check if (a*i)%M == 1,
          //then i will be the multiplicative inverse of a
          if (flag == 1)
-         {
             a_inv = i;
-         }
       }
-      for (int i = 0; i < cipherText.length(); i++)
-      {
-         if (cipherText[i] != ' ')
-            /*Applying decryption formula a^-1 ( x - b ) mod m
-            {here x is cipher[i] and m is 26} and added 'A'
-            to bring it in range of ASCII alphabet[ 65-90 | A-Z ] */
-            msg = msg +
-                  (char)(((a_inv * ((cipherText[i] + 'A' - b)) % 26)) + 'A');
-         else
-            //else simply append space character
-            msg += cipherText[i];
-      }
+      // end source
 
+      // shift everything down the ascii table to make it easier
+      string str;
+      for (int i = 0; i < cipher.length(); i++)
+         str += cipher[i] - ' ';
+
+      // perform the decription
+      std::string msg = "";
+      for (int i = 0; i < str.length(); i++)
+      {
+         int x = a_inv * (int(str[i]) - getBfromPassword(password));
+
+         /*
+         * if x is outside of the vaules of the given alphabet mod it
+         * by the value of the alphabet. This is equivalent to adding
+         * or subtracting the value of the alphabet to a number until
+         * it is within the range of the alphabet
+         */
+         if (x > M)
+            x = x % M;
+
+         if (x < 0)
+            x = x % M;
+
+         msg += (char)x + ' '; //return the cipher text to the correct number
+      }
       return msg;
    }
 
 private:
-   int m = 95; // the number of chars in our alphabet
-   int a = 77; // this is co prime to m 95 = 5 * 19, 77 = 11 * 7
-
-   //b = ascii number from first char
+   /**********************************************************
+    * getBfromPassword
+    * Given a string generate a valid key (b)
+    * b can be any integer value
+    * larger numbers are more secure
+    **********************************************************/
    int getBfromPassword(std::string password)
    {
-      return int(password[0]);
+      int b = 0;
+      for (int i = 0; i < password.length(); i++)
+         b *= password[i];
+      return b;
    }
 };
 
