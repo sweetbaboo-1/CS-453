@@ -12,10 +12,10 @@
 class Cipher02 : public Cipher
 {
 public:
-   virtual std::string getPseudoAuth()  { return "pseudocode author"; }
-   virtual std::string getCipherName()  { return "cipher name"; }
-   virtual std::string getEncryptAuth() { return "encrypt author"; }
-   virtual std::string getDecryptAuth() { return "decrypt author"; }
+   virtual std::string getPseudoAuth()  { return "Tyler Craig"; }
+   virtual std::string getCipherName()  { return "Hill Cipher"; }
+   virtual std::string getEncryptAuth() { return "Tyler Craig"; }
+   virtual std::string getDecryptAuth() { return "Tyler Craig"; }
 
    /***********************************************************
     * GET CIPHER CITATION
