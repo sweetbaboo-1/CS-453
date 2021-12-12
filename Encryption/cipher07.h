@@ -82,7 +82,7 @@ public:
       {
          for(int j = 0; j < 3; j++)
          {
-            key[i][j] = password[m] % 65;
+            key[i][j] = password[m] % 26;
             c[i][j] = key[i][j];
             m++;
          }
