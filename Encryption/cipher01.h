@@ -74,12 +74,12 @@ public:
    {
 
       // shift everything down the ascii table by the value of the first char in our alphabet ' '
-      string str = "";
+      std::string str = "";
       for (int i = 0; i < plainText.length(); i++)
          str += plainText[i] - ' '; // make our chars 0 based
 
       // encript everything using the formula f(x) = ax + b % m
-      string cipher = "";
+      std::string cipher = "";
       for (int i = 0; i < str.length(); i++)
       {
          int x = ((A * (str[i]) + getBfromPassword(password)) % M);
@@ -123,7 +123,7 @@ public:
       // end source
 
       // shift everything down the ascii table to make it easier
-      string str;
+      std::string str;
       for (int i = 0; i < cipher.length(); i++)
          str += cipher[i] - ' ';
 

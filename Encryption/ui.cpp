@@ -11,6 +11,7 @@
 #include <iomanip>
 #include <string>
 #include <vector>
+#include <map>
 
 #include "cipher.h"    // Base Cipher Class
 #include "example.h"   // Bro Helfrich example Cipher
@@ -22,7 +23,7 @@
 #include "cipher06.h"
 #include "cipher07.h"
 
-using namespace std;
+
 
 /********************************************************************
  * UI CLASS
@@ -30,14 +31,14 @@ using namespace std;
 class UI
 {
 private:
-   vector<Cipher*> cipher;
-   string plaintext;
-   string password;
+   std::vector<Cipher*> cipher;
+   std::string plaintext;
+   std::string password;
 
 public:
    /************************************************************
     * DEFAULT CONSTRUCTOR
-    * sets string to null and loads the cipher vector
+    * sets std::string to null and loads the cipher vector
     ************************************************************/
    UI()
    {
@@ -67,7 +68,7 @@ public:
       cout << "What cipher do you want to test?\n";
       for (int i = 0; i != nOptions; i++)
       {
-         string nCipher = cipher[i]->getCipherName();
+         std::string nCipher = cipher[i]->getCipherName();
          if (nCipher.compare("cipher name") != 0)
             cout << setw(4) << i << " .... " 
                  << cipher[i]->getCipherName() << endl;
@@ -135,8 +136,8 @@ public:
     ************************************************************/
    void getReport(const int & index)
    {
-      string encrypted = cipher[index]->encrypt(plaintext, password);
-      string decrypted = cipher[index]->decrypt(encrypted, password);
+      std::string encrypted = cipher[index]->encrypt(plaintext, password);
+      std::string decrypted = cipher[index]->decrypt(encrypted, password);
       cout << "==================================="
            << "===================================\n";
       cout << "Cipher Name:         " 
@@ -168,7 +169,7 @@ public:
  * drives the UI class
  ********************************************************************/
 void Encryption_lab_main()
-//void main()
+//int main()
 {
    UI interface;
    int index;
@@ -177,8 +178,9 @@ void Encryption_lab_main()
 
    if (index == -1) // if index == -1 then quit
       return;
+      //return 0;
 
    interface.getText(); // get the plaintext and password
    interface.getReport(index); // generate the report
-  
+  //return 0;
 }

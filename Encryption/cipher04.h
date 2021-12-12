@@ -7,25 +7,25 @@
 #define CIPHER04_H
 
 
-
+using namespace std;
 /********************************************************************
  * CLASS
  *******************************************************************/
 class Cipher04 : public Cipher
 {
 public:
-    virtual std::string getPseudoAuth() { return "Christopher Van Kammen"; }
-    virtual std::string getCipherName() { return "Substitution cipher"; }
-    virtual std::string getEncryptAuth() { return "Christopher Van Kammen"; }
-    virtual std::string getDecryptAuth() { return "Christopher Van Kammen"; }
+    virtual string getPseudoAuth() { return "Christopher Van Kammen"; }
+    virtual string getCipherName() { return "Substitution cipher"; }
+    virtual string getEncryptAuth() { return "Christopher Van Kammen"; }
+    virtual string getDecryptAuth() { return "Christopher Van Kammen"; }
 
     /***********************************************************
      * GET CIPHER CITATION
      * Returns the citation from which we learned about the cipher
      ***********************************************************/
-    virtual std::string getCipherCitation()
+    virtual string getCipherCitation()
     {
-        return std::string("Simon Singh. (n.d.). Crypto. Practical Cryptography.\n"
+        return string("Simon Singh. (n.d.). Crypto. Practical Cryptography.\n"
             "http://practicalcryptography.com/ciphers/classical-era/simple-substitution/");
     }
 
@@ -33,9 +33,9 @@ public:
      * GET PSEUDOCODE
      * Returns the pseudocode as a string to be used by the caller.
      **********************************************************/
-    virtual std::string getPseudocode()
+    virtual string getPseudocode()
     {
-        std::string str;
+        string str;
 
         // TODO: please format your pseudocode
         // The encrypt pseudocode
@@ -51,11 +51,11 @@ public:
      * ENCRYPT
      * TODO: ADD description
      **********************************************************/
-    virtual std::string encrypt(const std::string& plainText,
-        const std::string& password)
+    virtual string encrypt(const string& plainText,
+        const string& password)
     {
         int count = 0;
-        std::string cipherText;
+        string cipherText;
         for (int i = plainText.length() - 1; i >= 0; i--)
         {
             cipherText += substitution.find(plainText[count])->second;
@@ -68,10 +68,10 @@ public:
      * DECRYPT
      * TODO: ADD description
      **********************************************************/
-    virtual std::string decrypt(const std::string& cipherText,
-        const std::string& password)
+    virtual string decrypt(const string& cipherText,
+        const string& password)
     {
-        std::string plainText;
+        string plainText;
         int count = 0;
         for (int i = cipherText.length() - 1; i >= 0; i--)
         {
@@ -82,7 +82,7 @@ public:
     }
 
 private:
-    std::map<char, char> substitution = {
+    map<char, char> substitution = {
                { 'a', 'q' },
                { 'b', 'w' },
                { 'c', 'e' },
@@ -177,7 +177,7 @@ private:
                { '\t', '%'}
     };
 
-    std::map<char, char> substitutionReverse = {
+    map<char, char> substitutionReverse = {
                { 'q', 'a' },
                { 'w', 'b' },
                { 'e', 'c' },
@@ -278,27 +278,27 @@ private:
 //class Cipher04 : public Cipher
 //{
 //public:
-//   virtual std::string getPseudoAuth()  { return "pseudocode author"; }
-//   virtual std::string getCipherName()  { return "cipher name"; }
-//   virtual std::string getEncryptAuth() { return "encrypt author"; }
-//   virtual std::string getDecryptAuth() { return "decrypt author"; }
+//   virtual string getPseudoAuth()  { return "pseudocode author"; }
+//   virtual string getCipherName()  { return "cipher name"; }
+//   virtual string getEncryptAuth() { return "encrypt author"; }
+//   virtual string getDecryptAuth() { return "decrypt author"; }
 //
 //   /***********************************************************
 //    * GET CIPHER CITATION
 //    * Returns the citation from which we learned about the cipher
 //    ***********************************************************/
-//   virtual std::string getCipherCitation()
+//   virtual string getCipherCitation()
 //   {
-//      return std::string("citation");
+//      return string("citation");
 //   }
 //   
 //   /**********************************************************
 //    * GET PSEUDOCODE
 //    * Returns the pseudocode as a string to be used by the caller.
 //    **********************************************************/
-//   virtual std::string getPseudocode()
+//   virtual string getPseudocode()
 //   {
-//      std::string str;
+//      string str;
 //
 //      // TODO: please format your pseudocode
 //      // The encrypt pseudocode
@@ -314,10 +314,10 @@ private:
 //    * ENCRYPT
 //    * TODO: ADD description
 //    **********************************************************/
-//   virtual std::string encrypt(const std::string & plainText,
-//                               const std::string & password)
+//   virtual string encrypt(const string & plainText,
+//                               const string & password)
 //   {
-//      std::string cipherText = plainText;
+//      string cipherText = plainText;
 //      // TODO - Add your code here
 //      return cipherText;
 //   }
@@ -326,10 +326,10 @@ private:
 //    * DECRYPT
 //    * TODO: ADD description
 //    **********************************************************/
-//   virtual std::string decrypt(const std::string & cipherText,
-//                               const std::string & password)
+//   virtual string decrypt(const string & cipherText,
+//                               const string & password)
 //   {
-//      std::string plainText = cipherText;
+//      string plainText = cipherText;
 //      // TODO - Add your code here
 //      return plainText;
 //   }
