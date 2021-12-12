@@ -168,6 +168,7 @@ public:
  * drives the UI class
  ********************************************************************/
 void Encryption_lab_main()
+//void main()
 {
    UI interface;
    int index;
@@ -179,4 +180,5 @@ void Encryption_lab_main()
 
    interface.getText(); // get the plaintext and password
    interface.getReport(index); // generate the report
+  
 }

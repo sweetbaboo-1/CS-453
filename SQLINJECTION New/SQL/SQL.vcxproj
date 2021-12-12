@@ -19,20 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Bell_LaPadula\bell_main.cpp" />
-    <ClCompile Include="..\..\Bell_LaPadula\interact.cpp" />
-    <ClCompile Include="..\..\Bell_LaPadula\lab12.cpp" />
-    <ClCompile Include="..\..\Bell_LaPadula\message.cpp" />
-    <ClCompile Include="..\..\Bell_LaPadula\messages.cpp" />
+    <ClInclude Include="..\..\Encryption\cipher.h" />
+    <ClInclude Include="..\..\Encryption\cipher01.h" />
+    <ClInclude Include="..\..\Encryption\cipher02.h" />
+    <ClInclude Include="..\..\Encryption\cipher03.h" />
+    <ClInclude Include="..\..\Encryption\cipher04.h" />
+    <ClInclude Include="..\..\Encryption\cipher05.h" />
+    <ClInclude Include="..\..\Encryption\cipher06.h" />
+    <ClInclude Include="..\..\Encryption\cipher07.h" />
+    <ClInclude Include="..\..\Encryption\example.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Bell_LaPadula\control.h" />
-    <ClInclude Include="..\..\Bell_LaPadula\interact.h" />
-    <ClInclude Include="..\..\Bell_LaPadula\message.h" />
-    <ClInclude Include="..\..\Bell_LaPadula\messages.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\..\Bell_LaPadula\messages.txt" />
+    <ClCompile Include="..\..\Encryption\ui.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
