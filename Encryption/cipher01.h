@@ -85,7 +85,7 @@ public:
          int x = ((A * (str[i]) + getBfromPassword(password)) % M);
          while (x > M)
             x = x % M;
-            //x -= M;
+         //x -= M;
          cipher += (char)x;
       }
 
@@ -154,14 +154,16 @@ private:
    /**********************************************************
     * getBfromPassword
     * Given a string generate a valid key (b)
-    * b can be any integer value
+    * b must be 0 <= b <= 25
     * larger numbers are more secure
     **********************************************************/
    int getBfromPassword(std::string password)
    {
-      int b = 0;
+      int b = 1;
       for (int i = 0; i < password.length(); i++)
          b *= password[i];
+      if (b > 25)
+         b = b % 25;
       return b;
    }
 };
