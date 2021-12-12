@@ -74,7 +74,6 @@
         "numeric": "cpp",
         "random": "cpp",
         "string_view": "cpp",
-        "fstream": "cpp",
-        "ranges": "cpp"
+        "fstream": "cpp"
     }
 }
